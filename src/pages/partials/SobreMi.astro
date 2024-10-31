@@ -1,0 +1,60 @@
+---
+import SectionHeader from "../../components/SectionHeader.astro";
+import BannerSobreMi from "../../assets/img/banner-sobre-mi.png";
+import { Image } from "astro:assets";
+import BgWave from "../../assets/img/wave-section-1.svg";
+---
+
+<section class="sobre-mi">
+  <SectionHeader>Sobre mí</SectionHeader>
+  <div class="sobre-mi-content container my-12">
+    <div class="sobre-mi-img-container">
+      <Image src={BannerSobreMi} alt="Sobre mí" class="sobre-mi" />
+    </div>
+    <p class="sobre-mi-info">
+      ¡Hola! Soy <b>Inés, graduada Masterchef</b> y una auténtica <b
+        >aventurera de los sabores.</b
+      >Creo <b>delicias únicas que despiertan los sentidos</b> y alegran el día de
+      quienes las prueban. Cada bocado refleja mi dedicación a la calidad y mi <b
+        >deseo de sorprender con cada creación.</b
+      >
+    </p>
+  </div>
+  <Image src={BgWave} alt="" class="img-wave" />
+</section>
+
+<style>
+  .sobre-mi-content {
+    padding: 16px 160px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 72px;
+  }
+  .sobre-mi-img-container {
+    padding: 16px;
+    border: 1px solid var(--chocolate);
+  }
+
+  .sobre-mi-info {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+
+    b {
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
+
+  .img-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100%;
+    z-index: -10;
+    object-fit: contain;
+    object-position: bottom center;
+  }
+</style>

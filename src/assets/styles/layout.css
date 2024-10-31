@@ -1,0 +1,17 @@
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  margin-right: auto;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+
+section {
+    background-color: #ffffffcc;
+    position: relative;
+    z-index: 100;
+    padding: 32px 0;
+    width: 100%;
+}

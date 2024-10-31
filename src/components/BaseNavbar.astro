@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+import LogoLandscape from "../assets/icons/logo/logo-landscape.svg";
+---
+
+<header>
+  <nav class="container px-40">
+    <Image src={LogoLandscape} alt="Inés en la cocina" class="logo" />
+    <ul>
+      <li><a>SOBRE MI</a></li>
+      <li><a>PRODUCTOS</a></li>
+      <li><a>CÓMO TRABAJAMOS</a></li>
+      <li><a>ENTREGAS</a></li>
+      <li><a>CONTACTO</a></li>
+    </ul>
+  </nav>
+  <div class="wave"></div>
+</header>
+
+<style>
+  .wave {
+    --mask: radial-gradient(
+          38.59px at 50% calc(100% - 53px),
+          #000 99%,
+          #0000 101%
+        )
+        calc(50% - 40px) 0/80px 100%,
+      radial-gradient(38.59px at 50% calc(100% + 33px), #0000 99%, #000 101%)
+        50% calc(100% - 20px) / 80px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    color: white;
+    background-color: var(--chocolate);
+    z-index: 1000;
+  }
+
+  .logo {
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .wave {
+    position: sticky;
+    top: 48px;
+    display: block;
+    height: 40px;
+    background: var(--chocolate);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    z-index: 1000;
+  }
+
+  nav,
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li {
+    list-style: none;
+    display: inline-flex;
+    margin: 0 12px;
+    color: var(--lime);
+    transition: var(--hover-transition);
+
+    &:hover,
+    &:active {
+      color: var(--orange);
+    }
+  }
+
+  a {
+    cursor: pointer;
+  }
+</style>

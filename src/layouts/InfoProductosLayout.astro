@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import BannerPasteleria from "../assets/img/banner-pasteleria.png";
+import BannerPanaderia from "../assets/img/banner-panaderia.png";
+import BaseButton from "../components/BaseButton.astro";
+
+type Props = {
+  categoria: "pastelería" | "panadería";
+};
+
+const { categoria } = Astro.props;
+---
+
+<div class="producto px-20 py-10">
+  <div class="producto-content container py-20 px-40">
+    <div>
+      <h3>{categoria}</h3>
+      <p>
+        <slot />
+      </p>
+      <BaseButton>Ver precios</BaseButton>
+    </div>
+  </div>
+  <Image
+    src={categoria === "pastelería" ? BannerPasteleria : BannerPanaderia}
+    alt={`seccion-${categoria}`}
+    class="banner-producto top-5"
+  />
+</div>
+
+<style>
+  .producto {
+    position: relative;
+  }
+
+  .producto-content {
+    background-color: white;
+    border-radius: 8px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    h3 {
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 64px;
+    }
+
+    p {
+      font-size: 20px;
+      color: var(--chocolate);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+  }
+
+  .banner-producto {
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: auto;
+  }
+</style>

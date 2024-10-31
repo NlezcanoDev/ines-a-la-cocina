@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import BannerPasteleria from "../../assets/img/banner-pasteleria.png";
+import BaseButton from "../../components/BaseButton.astro";
+---
+
+<div class="pasteleria px-20 py-10">
+  <div class="pasteleria-content container py-20 px-40">
+    <div>
+      <h3>Pastelería</h3>
+      <p>
+        Gran variedad de <b>tortas, cupcakes y postres caseros.</b> Contamos tambien
+        con opciones <b>veganas, keto y apto celíaco.</b>
+      </p>
+      <BaseButton>Ver precios</BaseButton>
+    </div>
+  </div>
+  <Image
+    src={BannerPasteleria}
+    alt="Sección pastelería"
+    class="banner-pasteleria top-5"
+  />
+</div>
+
+<style>
+  .pasteleria {
+    position: relative;
+  }
+
+  .pasteleria-content {
+    background-color: white;
+    border-radius: 8px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    h3 {
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 64px;
+    }
+
+    p {
+      font-size: 20px;
+      color: var(--chocolate);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+  }
+
+  .banner-pasteleria {
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: auto;
+  }
+</style>

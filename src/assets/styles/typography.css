@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Baloo Bhaijaan 2", sans-serif !important;
+
+  &:not(h1) {
+    font-weight: semibold !important;
+  }
+}
+
+p {
+  color: var(--chocolate);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+
+a:hover {
+  transition: all 0.3s linear;
+  cursor: pointer;
+  color: var(--orange);
+}

@@ -1,0 +1,77 @@
+---
+import SectionHeader from "../../components/SectionHeader.astro";
+import { Image } from "astro:assets";
+import BgWave from "../../assets/img/wave-section-1.svg";
+import BaseButton from "../../components/BaseButton.astro";
+---
+
+<section class="entregas">
+  <SectionHeader>Entregas</SectionHeader>
+  <div class="entregas-content container my-12">
+    <div class="entregas-inof">
+      <p class="entregas-info mb-8">
+        Las entregas se realizan en un <b
+          >punto de encuentro a acordar con el cliente, una vez realizado el
+          pedido vía WhatsApp</b
+        >.Hacemos entregas en
+        <b>zona Parque Saavedra (CABA, Buenos Aires)</b> o se pueden retirar en mi
+        domicilio.
+      </p>
+      <BaseButton>Consultar</BaseButton>
+    </div>
+    <div class="entregas-iframe-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13144.432285766752!2d-58.4798156!3d-34.550819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb696ab5cb4ed%3A0x887c745720a0e9b6!2sParque%20Saavedra!5e0!3m2!1ses!2sar!4v1729993056247!5m2!1ses!2sar"
+        width="568"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <Image src={BgWave} alt="" class="img-wave" />
+</section>
+
+<style>
+  .entregas-content {
+    padding: 16px 160px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 72px;
+  }
+  .entregas-iframe-container {
+    width: 600px;
+    height: 480px;
+    padding: 16px;
+    border: 1px solid var(--chocolate);
+
+    iframe {
+      border-radius: 8px;
+    }
+  }
+
+  .entregas-info {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+
+    b {
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
+
+  .img-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100%;
+    z-index: -10;
+    object-fit: contain;
+    object-position: bottom center;
+    transform: scaleX(-1);
+  }
+</style>
