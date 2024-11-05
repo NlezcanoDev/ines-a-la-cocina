@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nombre": "Blondie",
+        "descripcion": "Similar a receta de brownie tradicional con chocolate blanco",
+        "img": "",
+        "tipo": 1,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    }
+]
