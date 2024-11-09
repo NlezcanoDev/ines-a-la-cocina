@@ -3,6 +3,13 @@ export enum TipoProducto {
     Panaderia
 }
 
+export namespace TipoProducto {
+    export const FromKey:Record<TipoProducto, string> = {
+        [TipoProducto.Pasteleria]: 'Pasteleria',
+        [TipoProducto.Panaderia]: 'Panaderia'
+    }
+}
+
 export enum CategoriaPasteleria {
     Torta,
     Reposteria,
@@ -25,6 +32,17 @@ export namespace CategoriaPasteleria {
         [CategoriaPasteleria.Vegano]: 'Vegano',
         [CategoriaPasteleria.Keto]: 'Keto',
         [CategoriaPasteleria.Celiaco]: 'Apto celíaco'
+    }
+    
+    export const FromValue: Record<string, CategoriaPasteleria> = {
+        'tortas': CategoriaPasteleria.Torta,
+        'repostería': CategoriaPasteleria.Reposteria,
+        'cupcakes': CategoriaPasteleria.Cupcake,
+        'postres': CategoriaPasteleria.Postre,
+        'envasados': CategoriaPasteleria.Envasado,
+        'vegano': CategoriaPasteleria.Vegano,
+        'keto': CategoriaPasteleria.Keto,
+        'apto_celíaco': CategoriaPasteleria.Celiaco,
     }
 }
 
@@ -50,5 +68,16 @@ export namespace CategoriaPanaderia {
         [CategoriaPanaderia.Vegano]: 'Vegano',
         [CategoriaPanaderia.Keto]: 'Keto',
         [CategoriaPanaderia.Celiaco]: 'Apto celíaco'
+    }
+
+    export const FromValue: Record<string, CategoriaPanaderia> = {
+        'panes': CategoriaPanaderia.Pan,
+        'budines': CategoriaPanaderia.Budin,
+        'cookies': CategoriaPanaderia.Cookie,
+        'tartas': CategoriaPanaderia.Tarta,
+        'festivo': CategoriaPanaderia.Festivo,
+        'vegano': CategoriaPanaderia.Vegano,
+        'keto': CategoriaPanaderia.Keto,
+        'apto_celíaco': CategoriaPanaderia.Celiaco,
     }
 }
