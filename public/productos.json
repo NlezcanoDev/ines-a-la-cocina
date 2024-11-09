@@ -1,11 +1,31 @@
 [
     {
         "id": 1,
+        "nombre": "Testing",
+        "descripcion": "Similar a receta de brownie tradicional con chocolate blanco",
+        "img": "",
+        "tipo": 0,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 2,
         "nombre": "Blondie",
         "descripcion": "Similar a receta de brownie tradicional con chocolate blanco",
         "img": "",
-        "tipo": 1,
+        "tipo": 0,
         "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 3,
+        "nombre": "Prueba",
+        "descripcion": "Similar a receta de brownie tradicional con chocolate blanco",
+        "img": "",
+        "tipo": 0,
+        "categorias": [0],
         "apto": [],
         "presentacion": ["unidad", "porcion"]
     }
