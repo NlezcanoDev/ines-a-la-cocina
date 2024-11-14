@@ -2,7 +2,7 @@
 import { computed, onBeforeMount, onMounted, ref } from 'vue';
 import { CategoriaPanaderia, CategoriaPasteleria, TipoProducto } from '../data/productos.enum';
 import BaseCarousel from './BaseCarousel.vue';
-import type { Producto } from '../data/productos.types';
+import type { Presentacion, Producto, ProductoApto } from '../data/productos.types';
 
 type Props = {
   id: string
@@ -15,12 +15,14 @@ const props = defineProps<Props>()
 
 const categoriaSelected = ref<string>()
 const categorias = computed(()=> getCategorias(props.tipo))
+
+const totalProds = ref<Array<Producto>>([])
 const productos = ref<Array<Producto>>([])
 
 onBeforeMount(()=> {
     categoriaSelected.value = categorias.value[0]
 })
-onMounted(async ()=> await getProductos(props.tipo, categoriaSelected.value))
+onMounted(async ()=> await getProductos(props.tipo, categoriaSelected.value, true))
 
 const getCategorias = (tipo: TipoProducto): Array<string>  =>{
     const categorias = Object
@@ -33,10 +35,14 @@ const getCategorias = (tipo: TipoProducto): Array<string>  =>{
         .filter(c => c)
 }
 
-async function getProductos(tipo:TipoProducto, cat: string) {
+async function getProductos(tipo:TipoProducto, cat: string, inicial = false) {
     cat = cat.toLowerCase().replaceAll(' ', '_')
-    const response = await fetch("./productos.json")
-    const data:Array<Producto> = await response.json()
+    if(inicial){
+      const response = await fetch("./productos.json")
+      const data:Array<Producto> = await response.json()
+      totalProds.value = data
+    }
+
     let baseCat:CategoriaPanaderia | CategoriaPasteleria;
 
     if(tipo === TipoProducto.Pasteleria)
@@ -44,7 +50,14 @@ async function getProductos(tipo:TipoProducto, cat: string) {
     else 
         baseCat = CategoriaPanaderia.FromValue[cat]
     
-    productos.value = data.filter((p) => p.tipo === tipo && p.categorias.includes(baseCat))
+        productos.value = totalProds.value.filter(p => p.tipo === tipo)        
+        if(["vegano","keto","celiaco"].every(t => t !== cat)){
+          productos.value = productos.value.filter((p) => p.categorias.includes(baseCat))
+        } else {
+          productos.value = productos.value.filter((p) => p.apto.includes(cat as ProductoApto))
+        }
+
+
   }
 
 const handleClick = async (cat: string) => {
@@ -79,6 +92,9 @@ const handleClick = async (cat: string) => {
 </template>
 
 <style scoped lang="css">
+section {
+    background-color: transparent !important;
+}
   .categorias {
     width: 100%;
     display: flex;
