@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Torta from "../assets/img/productos/porcion.jpg"
-
 import Keto from "../assets/icons/card/keto.svg"
 import SinTacc from "../assets/icons/card/sin-tacc.svg"
 import Vegano from "../assets/icons/card/vegano.svg"
@@ -17,9 +15,14 @@ defineProps<Props>()
 </script>
 
 <template>
-<div class="card swiper-slide">
-    <div class="card-img">
-        <img :src="Torta.src" :alt="producto.nombre">
+<div class="card swiper-slide" v-memo="producto.img">
+    <div v-if="producto.img" :id="`img-${producto.id.toString()}`"  class="card-img">
+        <!-- <div v-if="isLoaded" class="img-loading"></div> -->
+        <img
+          :src="producto.img" 
+          :alt="producto.nombre"
+          loading="lazy"
+        />
     </div>
     <div class="card-content">
         <h3>{{producto.nombre}}</h3>
@@ -64,6 +67,7 @@ defineProps<Props>()
     margin: 8px;
   }
 .card-img img {
+  height: 246px;
   border-radius: 8px 8px 0 0;
 }
 
@@ -86,5 +90,11 @@ defineProps<Props>()
   display: flex;
   justify-content: center;
   column-gap: 8px;
+}
+
+.img-loading{
+  width: 246px;
+  height: 292px;
+  background-attachment: #cacaca;
 }
 </style>

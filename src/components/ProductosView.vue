@@ -50,14 +50,7 @@ async function getProductos(tipo:TipoProducto, cat: string, inicial = false) {
     else 
         baseCat = CategoriaPanaderia.FromValue[cat]
     
-        productos.value = totalProds.value.filter(p => p.tipo === tipo)        
-        if(["vegano","keto","celiaco"].every(t => t !== cat)){
-          productos.value = productos.value.filter((p) => p.categorias.includes(baseCat))
-        } else {
-          productos.value = productos.value.filter((p) => p.apto.includes(cat as ProductoApto))
-        }
-
-
+        productos.value = totalProds.value.filter(p => p.tipo === tipo && p.categorias.includes(baseCat))        
   }
 
 const handleClick = async (cat: string) => {

@@ -1,31 +1,610 @@
 [
     {
         "id": 1,
-        "nombre": "Testing",
+        "nombre": "Blondie",
         "descripcion": "Similar a receta de brownie tradicional con chocolate blanco",
-        "img": "",
+        "img": "https://i.postimg.cc/RFwJ0KnP/1-Blondie.png",
         "tipo": 0,
-        "categorias": [1],
+        "categorias": [0],
         "apto": [],
         "presentacion": ["unidad", "porcion"]
     },
     {
         "id": 2,
-        "nombre": "Blondie",
-        "descripcion": "Similar a receta de brownie tradicional con chocolate blanco",
-        "img": "",
+        "nombre": "Brownie",
+        "descripcion": "Opciones tradicional o Keto con harina de coco y stevia",
+        "img": "https://i.postimg.cc/T19yVx0g/2-Brownie.png",
         "tipo": 0,
-        "categorias": [1],
-        "apto": [],
+        "categorias": [0, 5, 6],
+        "apto": ["vegano", "keto"],
         "presentacion": ["unidad", "porcion"]
     },
     {
         "id": 3,
-        "nombre": "Prueba",
-        "descripcion": "Similar a receta de brownie tradicional con chocolate blanco",
-        "img": "",
+        "nombre": "Carrot cake",
+        "descripcion": "Torta de zanahoria con harina de trigo, queso light y edulcorante",
+        "img": "https://i.postimg.cc/C5YBn5Gw/3-Carrot-cake.png",
         "tipo": 0,
         "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 4,
+        "nombre": "Crumble cheesecake",
+        "descripcion": "Combina cheesecake tradicional con crumble de manzana",
+        "img": "https://i.postimg.cc/XvRy3QXG/4-Crumble-cheesecake.png",
+        "tipo": 0,
+        "categorias": [0, 5],
+        "apto": ["vegano"],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 5,
+        "nombre": "Rogel",
+        "descripcion": "Receta tradicional con merengue y dulce de leche",
+        "img": "https://i.postimg.cc/MZbj20wH/5-Rogel.png",
+        "tipo": 0,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 6,
+        "nombre": "Torta de brownie",
+        "descripcion": "Brownie tradicional con dulce de leche y merengue",
+        "img": "https://i.postimg.cc/GhLTcB3Q/6-Torta-brownie.png",
+        "tipo": 0,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 7,
+        "nombre": "Torta de mango",
+        "descripcion": "Receta tradicional con merengue y dulce de leche",
+        "img": "https://i.postimg.cc/HkjJyfy8/7-Torta-mango.png",
+        "tipo": 0,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 8,
+        "nombre": "Torta matcha",
+        "descripcion": "Tradicional receta con toque de matcha, opción vegano y keto",
+        "img": "https://i.postimg.cc/m2mzhbtG/8-Torta-matcha.png",
+        "tipo": 0,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 9,
+        "nombre": "Torta mousse",
+        "descripcion": "Elaboración mousse chocolate y relleno de dulce de leche",
+        "img": "https://i.postimg.cc/htwXbpLy/9-Torta-mousse.png",
+        "tipo": 0,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+
+    {
+        "id": 10,
+        "nombre": "Alfajor cordobés",
+        "descripcion": "Clásicos, rellenos de dulce de leche con glaseado de azúcar",
+        "img": "https://i.postimg.cc/QdBtt12p/1-Alfajor-cordob-s.png",
+        "tipo": 0,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 11,
+        "nombre": "Alfajor de maicena",
+        "descripcion": "Alfajores con dulce de leche y cobertura de azúcar impalpable",
+        "img": "https://i.postimg.cc/X71q4Qzj/2-Alfajor-maicena.png",
+        "tipo": 0,
+        "categorias": [1, 5],
+        "apto": ["vegano"],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 12,
+        "nombre": "Alfajor sablée",
+        "descripcion": "Alfajores con dulce de leche y cobertura de azúcar impalpable",
+        "img": "https://i.postimg.cc/wjSBs3zn/3-Alfajor-sablee.png",
+        "tipo": 0,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 13,
+        "nombre": "Ensaimadas",
+        "descripcion": "Bombas de masa brioche con relleno a elección",
+        "img": "https://i.postimg.cc/HLXk0Hsn/4-Ensaimadas.png",
+        "tipo": 0,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 14,
+        "nombre": "Gomitas naturales",
+        "descripcion": "Caseras sin conservantes, sabor limón, naranja y pomelo",
+        "img": "https://i.postimg.cc/50m9G3zM/5-Gomitas-naturales.png",
+        "tipo": 0,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 15,
+        "nombre": "Rolls de canela",
+        "descripcion": "Rollo de masa tipo brioche con canela y mezcla de azúcar",
+        "img": "https://i.postimg.cc/d3tQKyRZ/6-Rolls-canela.png",
+        "tipo": 0,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 16,
+        "nombre": "Trufas de ciruela",
+        "descripcion": "Bolitas de chocolate con ciruelas al ron",
+        "img": "https://i.postimg.cc/50JNnG63/7-Trufas-ciruela.png",
+        "tipo": 0,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+
+    {
+        "id": 17,
+        "nombre": "Cupcake de naranja",
+        "descripcion": "Bizcocho de naranja con buttercream frosting de naranja",
+        "img": "https://i.postimg.cc/8C104mTv/1-Cupcake-naranja.png",
+        "tipo": 0,
+        "categorias": [2, 5],
+        "apto": ["vegano"],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 18,
+        "nombre": "Cupcacke lemon pie",
+        "descripcion": "Bizcocho de limón con curd y copete de merengue italiano",
+        "img": "https://i.postimg.cc/rwGH5P2c/2-Cupcake-lemon-pie.png",
+        "tipo": 0,
+        "categorias": [2],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 19,
+        "nombre": "Muffin clásico",
+        "descripcion": "Magdalenas de vainilla, chocolate o marmoladas apto keto",
+        "img": "https://i.postimg.cc/yNvrb3Nb/3-Muffin-cl-sico.png",
+        "tipo": 0,
+        "categorias": [2, 6],
+        "apto": ["keto"],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 20,
+        "nombre": "Muffin de banana",
+        "descripcion": "Producto a base de banana con chips de chocolate",
+        "img": "https://i.postimg.cc/tTJmQRZC/4-Muffin-banana.png",
+        "tipo": 0,
+        "categorias": [2, 5],
+        "apto": ["vegano"],
+        "presentacion": ["unidad"]
+    },
+
+    {
+        "id": 21,
+        "nombre": "Cheesecake brûlée",
+        "descripcion": "Bolitas de chocolate con ciruelas al ron",
+        "img": "https://i.postimg.cc/PfpT1T3j/1-Cheese-brulee.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 22,
+        "nombre": "Chocomango",
+        "descripcion": "Combina el sabor tropical del mango con chocolate amargo",
+        "img": "https://i.postimg.cc/Z5Zmk3Tb/2-Chocomango.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 23,
+        "nombre": "Mousse de chocolate",
+        "descripcion": "Combina la frescura de la crema con el dulzor del chocolate blanco",
+        "img": "https://i.postimg.cc/J4j8dKCY/3-Mousse-chocolate.png",
+        "tipo": 0,
+        "categorias": [3, 6],
+        "apto": ["keto"],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 24,
+        "nombre": "Mousse de limón",
+        "descripcion": "Combina la acidez del limón con la suavidad de la crema",
+        "img": "https://i.postimg.cc/bY78TWW2/4-Mousse-limon.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 25,
+        "nombre": "Mousse de maracuyá",
+        "descripcion": "Mousse gastronomia brasileña con pulpa y semillas de maracuyá",
+        "img": "https://i.postimg.cc/Qdb3jttp/5-Mousse-maracuya.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 26,
+        "nombre": "Pannacotta",
+        "descripcion": "Alla passionate con maracuyá, tropical y refrescante",
+        "img": "https://i.postimg.cc/Bv7f1V2b/6-Pannacotta.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 27,
+        "nombre": "Pavlova",
+        "descripcion": "Postre de merengue casero con cobertura de frutos rojos",
+        "img": "https://i.postimg.cc/0NyqjsMh/7-Pavlova.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 28,
+        "nombre": "Playera",
+        "descripcion": "Postre de frutilla pie, combinación acida de limón con frutilla",
+        "img": "https://i.postimg.cc/wvt85QkV/8-Playera.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 29,
+        "nombre": "Tarta de natillas",
+        "descripcion": "Receta española con natillas de huevo, azúcar y pasas",
+        "img": "https://i.postimg.cc/j5GVMngr/9-Tarta-natillas.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 30,
+        "nombre": "Volcán de chocolate",
+        "descripcion": "Volcán de chocolate blanco con mermelada de frambuesa",
+        "img": "https://i.postimg.cc/cCYp212t/10-Volc-n-chocolate.png",
+        "tipo": 0,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+
+    {
+        "id": 31,
+        "nombre": "Mandarinas almibar",
+        "descripcion": "Casera sin conservantes agregados",
+        "img": "https://i.postimg.cc/HnHzWpjy/1-Mandarinas-almibar.png",
+        "tipo": 0,
+        "categorias": [4],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 32,
+        "nombre": "Mermelada de limón",
+        "descripcion": "Casera sin conservantes agregados",
+        "img": "https://i.postimg.cc/3NBBdPDb/2-Mermelada-lim-n.png",
+        "tipo": 0,
+        "categorias": [4],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 33,
+        "nombre": "Mermelada manzana",
+        "descripcion": "Especiada con clavo de olor, sin conservantes agregados",
+        "img": "https://i.postimg.cc/y6XnQSrX/3-Mermelada-manzana.png",
+        "tipo": 0,
+        "categorias": [4],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+
+    {
+        "id": 34,
+        "nombre": "Gérmen de trigo",
+        "descripcion": "Preparación a base de gérmen de trigo con un toque de miel",
+        "img": "https://i.postimg.cc/d3tCSDL4/1-Germen-trigo.png",
+        "tipo": 1,
+        "categorias": [0, 6],
+        "apto": ["keto"],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 35,
+        "nombre": "Pan alemán",
+        "descripcion": "Receta alemana con harina de centeno, trigo y cereales",
+        "img": "https://i.postimg.cc/fbmYV6Gj/2-Pan-aleman.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 36,
+        "nombre": "Pan brioche",
+        "descripcion": "Pan con bizcocho dulce, receta originaria de Francia",
+        "img": "https://i.postimg.cc/W37rn0bd/3-Pan-brioche.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 37,
+        "nombre": "Pan centeno y pasas",
+        "descripcion": "Preparación con harina de centeno, miel y pasas de uva",
+        "img": "https://i.postimg.cc/vByff0MR/4-Pan-centeno-pasas.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 38,
+        "nombre": "Pan challah",
+        "descripcion": "Pan dulce, receta tradicional de gastronomia judía",
+        "img": "https://i.postimg.cc/cC93qZ3Z/5-Pan-challah.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 39,
+        "nombre": "Pan de avena",
+        "descripcion": "Pan a base de avena, harina a elección y cobertura de avena",
+        "img": "https://i.postimg.cc/ryQxRGPb/6-Pan-avena.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 40,
+        "nombre": "Pan de centeno",
+        "descripcion": "Preparación con avena, harina a elección y cobertura de avena",
+        "img": "https://i.postimg.cc/GhtYF80p/7-Pan-integral.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 416,
+        "nombre": "Pan de tres cereales",
+        "descripcion": "Panes integrales con cobertura de semillas de zapallo",
+        "img": "https://i.postimg.cc/xTZmtfY3/8-Pan-tres-cereales.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 426,
+        "nombre": "Pan integral",
+        "descripcion": "Pan casero clásico con harina integral",
+        "img": "https://i.postimg.cc/5tdCWsXH/9-Pan-integral.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 43,
+        "nombre": "Pan tradicional",
+        "descripcion": "Pan lactal casero con tipo de harina a elección",
+        "img": "https://i.postimg.cc/dVTyfbVP/10-Pan-tradicional.png",
+        "tipo": 1,
+        "categorias": [0, 5],
+        "apto": ["vegano"],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 44,
+        "nombre": "Scones de queso",
+        "descripcion": "Panes individuales de queso, receta de origen británico",
+        "img": "https://i.postimg.cc/25QBknW0/11-Scones-queso.png",
+        "tipo": 1,
+        "categorias": [0],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+
+    {
+        "id": 45,
+        "nombre": "Budín clásico",
+        "descripcion": "Bizcocho de chocolate o vainilla con harina a elección y dátiles",
+        "img": "https://i.postimg.cc/ZqHNmB0t/1-Bud-n-clasico.png",
+        "tipo": 1,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 46,
+        "nombre": "Budín de mandarina",
+        "descripcion": "Bizcocho húmedo de mandarina con glaseado",
+        "img": "https://i.postimg.cc/85nrF2hZ/2-Budin-mandarina.png",
+        "tipo": 1,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 47,
+        "nombre": "Budín marmolado",
+        "descripcion": "Bizcocho de chocolate y vainilla con harina a elección",
+        "img": "https://i.postimg.cc/TwPD3dWy/3-Budin-marmolado.png",
+        "tipo": 1,
+        "categorias": [1],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+
+    {
+        "id": 48,
+        "nombre": "Cookies chocomenta",
+        "descripcion": "Galletitas de chips choco, menta y nuez",
+        "img": "https://i.postimg.cc/xjhz9SjC/1-Chocomenta.png",
+        "tipo": 1,
+        "categorias": [2],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 49,
+        "nombre": "Cookies de nutella",
+        "descripcion": "Galletitas de crema de avellanas y pasta de maní",
+        "img": "https://i.postimg.cc/ZnGBH6s3/2-Cookies-nutella.png",
+        "tipo": 1,
+        "categorias": [2],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 50,
+        "nombre": "Galletas lefse",
+        "descripcion": "Hechas con puré de papa y almidón, apto celíaco",
+        "img": "https://i.postimg.cc/y8z3SXZC/3-Galletas-lefse.png",
+        "tipo": 1,
+        "categorias": [2],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 51,
+        "nombre": "Pepas italianas",
+        "descripcion": "Pepas de mermelada de manzana casera, azúcar morena y maní",
+        "img": "https://i.postimg.cc/vHn6BSDv/4-Pepas-alemanas.png",
+        "tipo": 1,
+        "categorias": [2],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+
+    {
+        "id": 52,
+        "nombre": "Invertida manzana",
+        "descripcion": "Trocitos de manzana y cobertura de manzana caramelizada",
+        "img": "https://i.postimg.cc/kGmBzWdd/1-Invertida-manzana.png",
+        "tipo": 1,
+        "categorias": [3, 5, 7],
+        "apto": ["vegano", "celiaco"],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 53,
+        "nombre": "Invertida de pera",
+        "descripcion": "Elaborada con trocitos de pera y cobertura de pera caramelizada",
+        "img": "https://i.postimg.cc/L6mJVkTt/2-Invertida-pera.png",
+        "tipo": 1,
+        "categorias": [3, 6, 7],
+        "apto": ["keto", "celiaco"],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 54,
+        "nombre": "Lemon pie",
+        "descripcion": "Preparación con crema de limón, tradicional o libre de glúten",
+        "img": "https://i.postimg.cc/FFyfcCjF/3-Lemon-pie.png",
+        "tipo": 1,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 55,
+        "nombre": "Pastafrola",
+        "descripcion": "Tarta dulce tradicional con relleno a elección",
+        "img": "https://i.postimg.cc/J05GLt1H/4-Pastafrola.png",
+        "tipo": 1,
+        "categorias": [3],
+        "apto": [],
+        "presentacion": ["unidad", "porcion"]
+    },
+    {
+        "id": 56,
+        "nombre": "Tarta de pollo",
+        "descripcion": "Rellena de pollo, puerro y queso",
+        "img": "https://i.postimg.cc/c4TrkK9V/5-Tarta-pollo.png",
+        "tipo": 1,
+        "categorias": [3, 7],
+        "apto": ["celiaco"],
+        "presentacion": ["unidad"]
+    },
+
+    {
+        "id": 57,
+        "nombre": "Cookies navideñas",
+        "descripcion": "Galletitas de jengibre de tradición europea para colgar",
+        "img": "https://i.postimg.cc/W1HtjBP8/1-Cookies-navidenas.png",
+        "tipo": 1,
+        "categorias": [4],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 58,
+        "nombre": "Pan dulce navideño",
+        "descripcion": "Pan dulce clásico con pasas, almendras, nueces y chocolate",
+        "img": "https://i.postimg.cc/XvBqvsjb/2-Pan-dulce-clasico.png",
+        "tipo": 1,
+        "categorias": [4],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 59,
+        "nombre": "Personalizadas",
+        "descripcion": "Galletitas temáticas de maní con chocolate",
+        "img": "https://i.postimg.cc/B6xvTtP7/3-Personalizadas.png",
+        "tipo": 1,
+        "categorias": [4],
+        "apto": [],
+        "presentacion": ["unidad"]
+    },
+    {
+        "id": 60,
+        "nombre": "Rosca de pascua",
+        "descripcion": "Tradicional con crema pastelera, cerezas y bastones de azúcar",
+        "img": "https://i.postimg.cc/Tw8w5n1W/4-Rosca-pascua.png",
+        "tipo": 1,
+        "categorias": [4],
         "apto": [],
         "presentacion": ["unidad", "porcion"]
     }
