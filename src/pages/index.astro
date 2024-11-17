@@ -10,6 +10,7 @@ import ComoTrabajamos from "./partials/ComoTrabajamos.astro"
 import InfoEntregas from "./partials/InfoEntregas.astro"
 import BaseFooter from "./partials/BaseFooter.astro"
 import Productos from "./partials/Productos.astro"
+import WhatsappButton from "../components/astro/whatsappButton.astro"
 ---
 
 <Layout title="Welcome to Astro.">
@@ -23,6 +24,7 @@ import Productos from "./partials/Productos.astro"
   </main>
   <BaseFooter />
   <Image src={BackgroundParallax} alt="" class="parallax" />
+  <WhatsappButton />
 </Layout>
 
 <style>
