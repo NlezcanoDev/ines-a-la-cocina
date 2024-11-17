@@ -1,11 +1,11 @@
 ---
-import BaseButton from "../../components/BaseButton.astro";
-import BannerHero from "../../assets/img/banner-hero.png";
-import Amasador from "../../assets/icons/png/amasador.png";
-import Bagel from "../../assets/icons/png/bagel.png";
-import Pretzel from "../../assets/icons/png/pretzel.png";
-import WaveHero from "../../assets/img/wave-hero.svg";
-import { Image } from "astro:assets";
+import BaseButton from "../../components/BaseButton.astro"
+import BannerHero from "../../assets/img/banner-hero.png"
+import Amasador from "../../assets/icons/png/amasador.png"
+import Bagel from "../../assets/icons/png/bagel.png"
+import Pretzel from "../../assets/icons/png/pretzel.png"
+import WaveHero from "../../assets/img/wave-hero.svg"
+import { Image } from "astro:assets"
 ---
 
 <section id="hero" class="hero">
@@ -46,14 +46,12 @@ import { Image } from "astro:assets";
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     height: 60vh;
-    /* width: 100%; */
     align-items: center;
   }
 
   .hero-info {
     height: 50vh;
     margin-top: 100px;
-    /* max-width: 500px; */
 
     h1 {
       color: var(--orange);
@@ -73,9 +71,9 @@ import { Image } from "astro:assets";
   .hero-banner-img {
     position: absolute;
     top: 30vh;
-    right: -100px;
+    right: 0;
     transform: translateY(-50%);
-    width: 920px;
+    width: 780px;
     z-index: 10;
   }
 
