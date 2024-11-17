@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Autoplay } from 'swiper/modules';
 
-import 'swiper/css';
-import type { Producto } from '../data/productos.types';
 import ProductCard from './ProductCard.vue';
-import ChevronLeft from '../assets/icons/chevron/chevron-left.svg'
-import ChevronRight from '../assets/icons/chevron/chevron-right.svg'
-import { onBeforeUpdate, ref, watch } from 'vue';
+import ChevronLeft from '../../assets/icons/chevron/chevron-left.svg'
+import ChevronRight from '../../assets/icons/chevron/chevron-right.svg'
+
+import type { Producto } from '../../data/productos.types';
 import type SwiperType from 'swiper';
+import 'swiper/css';
 
 type Props = {
     productos: Array<Producto>

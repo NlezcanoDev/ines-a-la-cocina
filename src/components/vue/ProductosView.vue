@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, onBeforeMount, onMounted, ref } from 'vue';
-import { CategoriaPanaderia, CategoriaPasteleria, TipoProducto } from '../data/productos.enum';
+import { CategoriaPanaderia, CategoriaPasteleria, TipoProducto } from '../../data/productos.enum';
 import BaseCarousel from './BaseCarousel.vue';
-import type { Presentacion, Producto, ProductoApto } from '../data/productos.types';
+import type { Presentacion, Producto, ProductoApto } from '../../data/productos.types';
 
 type Props = {
   id: string

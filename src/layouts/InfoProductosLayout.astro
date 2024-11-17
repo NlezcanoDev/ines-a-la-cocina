@@ -1,14 +1,14 @@
 ---
-import { Image } from "astro:assets";
-import BannerPasteleria from "../assets/img/banner-pasteleria.png";
-import BannerPanaderia from "../assets/img/banner-panaderia.png";
-import BaseButton from "../components/BaseButton.astro";
+import { Image } from "astro:assets"
+import BaseButton from "../components/astro/BaseButton.astro"
+import BannerPasteleria from "../assets/img/banner-pasteleria.png"
+import BannerPanaderia from "../assets/img/banner-panaderia.png"
 
 type Props = {
-  categoria: "pastelería" | "panadería";
-};
+  categoria: "pastelería" | "panadería"
+}
 
-const { categoria } = Astro.props;
+const { categoria } = Astro.props
 ---
 
 <div class="producto px-20 py-10">

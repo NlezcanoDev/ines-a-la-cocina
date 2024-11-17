@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Keto from "../assets/icons/card/keto.svg"
-import SinTacc from "../assets/icons/card/sin-tacc.svg"
-import Vegano from "../assets/icons/card/vegano.svg"
-import Unidad from "../assets/icons/card/unidad.svg"
-import Porcion from "../assets/icons/card/porcion.svg"
+import Keto from "../../assets/icons/card/keto.svg"
+import SinTacc from "../../assets/icons/card/sin-tacc.svg"
+import Vegano from "../../assets/icons/card/vegano.svg"
+import Unidad from "../../assets/icons/card/unidad.svg"
+import Porcion from "../../assets/icons/card/porcion.svg"
 
-import type { Producto } from "../data/productos.types";
+import type { Producto } from "../../data/productos.types";
 
 interface Props {
   producto: Producto
