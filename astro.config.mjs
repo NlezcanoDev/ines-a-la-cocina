@@ -8,5 +8,5 @@ import vue from "@astrojs/vue";
 export default defineConfig({
   output: "static",
   adapter: netlify(),
-  integrations: [tailwind(), vue({ appEntrypoint: '/src/pages/_app' })],
+  integrations: [tailwind(), vue({ appEntrypoint: "/src/pages/_app" })],
 });

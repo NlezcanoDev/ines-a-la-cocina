@@ -1,53 +1,53 @@
 ---
-import { Image } from "astro:assets"
-import Liston from "../../assets/icons/png/liston.png"
+import { Image } from 'astro:assets'
+import Liston from '../../assets/icons/png/liston.png'
 ---
 
 <div class="section-header container px-40">
-  <Image src={Liston} alt="" class="section-header-liston" />
-  <div class="section-header-ribbon">
-    <h2>
-      <slot />
-    </h2>
-  </div>
-  <Image src={Liston} alt="" class="section-header-liston" />
+	<Image src={Liston} alt="" class="section-header-liston" />
+	<div class="section-header-ribbon">
+		<h2>
+			<slot />
+		</h2>
+	</div>
+	<Image src={Liston} alt="" class="section-header-liston" />
 </div>
 
 <style>
-  .section-header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 16px;
-    margin-top: 16px;
-  }
+	.section-header {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		margin-bottom: 16px;
+		margin-top: 16px;
+	}
 
-  .section-header-ribbon {
-    font-size: 28px;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  .section-header-ribbon {
-    --r: 0.8em;
+	.section-header-ribbon {
+		font-size: 28px;
+		font-weight: bold;
+		color: #fff;
+		text-transform: uppercase;
+	}
+	.section-header-ribbon {
+		--r: 0.8em;
 
-    padding-inline: calc(var(--r) + 1em);
-    line-height: 1.8;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      calc(100% - var(--r)) 50%,
-      100% 100%,
-      0 100%,
-      var(--r) 50%
-    );
-    background: var(--chocolate);
-    width: fit-content;
-  }
-  .section-header-liston {
-    height: 36px;
-    width: auto;
-  }
+		padding-inline: calc(var(--r) + 1em);
+		line-height: 1.8;
+		clip-path: polygon(
+			0 0,
+			100% 0,
+			calc(100% - var(--r)) 50%,
+			100% 100%,
+			0 100%,
+			var(--r) 50%
+		);
+		background: var(--chocolate);
+		width: fit-content;
+	}
+	.section-header-liston {
+		height: 36px;
+		width: auto;
+	}
 </style>

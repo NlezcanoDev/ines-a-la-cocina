@@ -1,153 +1,160 @@
 ---
-import { Image } from "astro:assets"
-import LogoLandscape from "../../assets/icons/logo/logo-landscape.svg"
+import { Image } from 'astro:assets'
+import LogoLandscape from '../../assets/icons/logo/logo-landscape.svg'
 ---
 
 <header>
-  <nav class="container px-40">
-    <a href="#hero" class="nav-btn">
-      <Image src={LogoLandscape} alt="Inés en la cocina" class="logo" />
-    </a>
-    <ul>
-      <li><a href="#sobre-mi" class="nav-btn">SOBRE MI</a></li>
-      <li><a href="#productos" class="nav-btn">PRODUCTOS</a></li>
-      <li><a href="#como-trabajamos" class="nav-btn">CÓMO TRABAJAMOS</a></li>
-      <li><a href="#entregas" class="nav-btn">ENTREGAS</a></li>
-      <li><a href="#contacto" class="nav-btn">CONTACTO</a></li>
-    </ul>
-  </nav>
-  <div class="wave"></div>
+	<nav class="container px-40">
+		<a href="#hero" class="nav-btn">
+			<Image src={LogoLandscape} alt="Inés en la cocina" class="logo" />
+		</a>
+		<ul>
+			<li><a href="#sobre-mi" class="nav-btn">SOBRE MI</a></li>
+			<li><a href="#productos" class="nav-btn">PRODUCTOS</a></li>
+			<li>
+				<a href="#como-trabajamos" class="nav-btn">CÓMO TRABAJAMOS</a>
+			</li>
+			<li><a href="#entregas" class="nav-btn">ENTREGAS</a></li>
+			<li><a href="#contacto" class="nav-btn">CONTACTO</a></li>
+		</ul>
+	</nav>
+	<div class="wave"></div>
 </header>
 
 <script is:inline>
-  const navButtons = document.querySelectorAll(".nav-btn")
+	const navButtons = document.querySelectorAll('.nav-btn')
 
-  for (let i = 0; i < navButtons.length; i++) {
-    const elem = navButtons[i]
+	for (let i = 0; i < navButtons.length; i++) {
+		const elem = navButtons[i]
 
-    elem.addEventListener("click", function (e) {
-      e.preventDefault()
+		elem.addEventListener('click', function (e) {
+			e.preventDefault()
 
-      const target = e.target
-      const scrollElemId = target.href.split("#")[1]
+			const target = e.target
+			const scrollElemId = target.href.split('#')[1]
 
-      const scrollEndElem = document.getElementById(scrollElemId)
+			const scrollEndElem = document.getElementById(scrollElemId)
 
-      // 3. and well animate to that node..
-      const anim = requestAnimationFrame((timestamp) => {
-        const stamp = timestamp || new Date().getTime()
-        const duration = 1200
-        const start = stamp
+			// 3. and well animate to that node..
+			const anim = requestAnimationFrame((timestamp) => {
+				const stamp = timestamp || new Date().getTime()
+				const duration = 1200
+				const start = stamp
 
-        const startScrollOffset = window.pageYOffset
-        const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top
+				const startScrollOffset = window.pageYOffset
+				const scrollEndElemTop =
+					scrollEndElem.getBoundingClientRect().top
 
-        scrollToElem(
-          start,
-          stamp,
-          duration,
-          scrollEndElemTop,
-          startScrollOffset
-        )
-      })
-    })
-  }
+				scrollToElem(
+					start,
+					stamp,
+					duration,
+					scrollEndElemTop,
+					startScrollOffset
+				)
+			})
+		})
+	}
 
-  const scrollToElem = (
-    startTime,
-    currentTime,
-    duration,
-    scrollEndElemTop,
-    startScrollOffset
-  ) => {
-    const runtime = currentTime - startTime
-    let progress = runtime / duration
+	const scrollToElem = (
+		startTime,
+		currentTime,
+		duration,
+		scrollEndElemTop,
+		startScrollOffset
+	) => {
+		const runtime = currentTime - startTime
+		let progress = runtime / duration
 
-    progress = Math.min(progress, 1)
+		progress = Math.min(progress, 1)
 
-    const ease = easeInCubic(progress)
+		const ease = easeInCubic(progress)
 
-    window.scroll(0, startScrollOffset + (scrollEndElemTop - 70) * ease)
-    if (runtime < duration) {
-      requestAnimationFrame((timestamp) => {
-        const currentTime = timestamp || new Date().getTime()
-        scrollToElem(
-          startTime,
-          currentTime,
-          duration,
-          scrollEndElemTop,
-          startScrollOffset
-        )
-      })
-    }
-  }
+		window.scroll(0, startScrollOffset + (scrollEndElemTop - 70) * ease)
+		if (runtime < duration) {
+			requestAnimationFrame((timestamp) => {
+				const currentTime = timestamp || new Date().getTime()
+				scrollToElem(
+					startTime,
+					currentTime,
+					duration,
+					scrollEndElemTop,
+					startScrollOffset
+				)
+			})
+		}
+	}
 
-  const easeInCubic = (t) => t * t * t
+	const easeInCubic = (t) => t * t * t
 </script>
 <style>
-  .wave {
-    --mask: radial-gradient(
-          38.59px at 50% calc(100% - 53px),
-          #000 99%,
-          #0000 101%
-        )
-        calc(50% - 40px) 0/80px 100%,
-      radial-gradient(38.59px at 50% calc(100% + 33px), #0000 99%, #000 101%)
-        50% calc(100% - 20px) / 80px 100% repeat-x;
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-  }
+	.wave {
+		--mask: radial-gradient(
+					38.59px at 50% calc(100% - 53px),
+					#000 99%,
+					#0000 101%
+				)
+				calc(50% - 40px) 0/80px 100%,
+			radial-gradient(
+					38.59px at 50% calc(100% + 33px),
+					#0000 99%,
+					#000 101%
+				)
+				50% calc(100% - 20px) / 80px 100% repeat-x;
+		-webkit-mask: var(--mask);
+		mask: var(--mask);
+	}
 
-  header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 80px;
-    padding-top: 16px;
-    padding-bottom: 8px;
-    color: white;
-    background-color: var(--chocolate);
-    z-index: 1000;
-  }
+	header {
+		position: sticky;
+		top: 0;
+		width: 100%;
+		height: 80px;
+		padding-top: 16px;
+		padding-bottom: 8px;
+		color: white;
+		background-color: var(--chocolate);
+		z-index: 1000;
+	}
 
-  .logo {
-    display: inline-block;
-    width: fit-content;
-    pointer-events: none;
-  }
+	.logo {
+		display: inline-block;
+		width: fit-content;
+		pointer-events: none;
+	}
 
-  .wave {
-    position: sticky;
-    top: 48px;
-    display: block;
-    height: 40px;
-    background: var(--chocolate);
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-    z-index: 1000;
-  }
+	.wave {
+		position: sticky;
+		top: 48px;
+		display: block;
+		height: 40px;
+		background: var(--chocolate);
+		-webkit-mask: var(--mask);
+		mask: var(--mask);
+		z-index: 1000;
+	}
 
-  nav,
-  ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+	nav,
+	ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-  li {
-    list-style: none;
-    display: inline-flex;
-    margin: 0 12px;
-    color: var(--lime);
-    transition: var(--hover-transition);
+	li {
+		list-style: none;
+		display: inline-flex;
+		margin: 0 12px;
+		color: var(--lime);
+		transition: var(--hover-transition);
 
-    &:hover,
-    &:active {
-      color: var(--orange);
-    }
-  }
+		&:hover,
+		&:active {
+			color: var(--orange);
+		}
+	}
 
-  a {
-    cursor: pointer;
-  }
+	a {
+		cursor: pointer;
+	}
 </style>

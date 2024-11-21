@@ -1,77 +1,80 @@
 ---
-import { Image } from "astro:assets"
-import SectionHeader from "../../components/astro/SectionHeader.astro"
-import BaseButton from "../../components/astro/BaseButton.astro"
-import BgWave from "../../assets/img/wave-section-1.svg"
-import BannerComoTrabajamos from "../../assets/img/banner-como-trabajamos.png"
-import Pan from "../../assets/icons/png/pan-lactal.png"
+import { Image } from 'astro:assets'
+import SectionHeader from '../../components/astro/SectionHeader.astro'
+import BaseButton from '../../components/astro/BaseButton.astro'
+import BgWave from '../../assets/img/wave-section-1.svg'
+import BannerComoTrabajamos from '../../assets/img/banner-como-trabajamos.png'
+import Pan from '../../assets/icons/png/pan-lactal.png'
 ---
 
 <section id="como-trabajamos" class="como-trabajamos">
-  <SectionHeader>¿Cómo trabajamos?</SectionHeader>
-  <div class="como-trabajamos-content container my-12">
-    <div class="como-trabajamos-img-container">
-      <Image
-        src={BannerComoTrabajamos}
-        alt="¿Cómo trabajamos?"
-        class="como-trabajamos"
-      />
-    </div>
-    <div class="como-trabajamos-inof">
-      <p class="como-trabajamos-info mb-8">
-        Tomamos pedidos con <b>48 horas de anticipación</b> como mínimo, <b
-          >vía WhatsApp.</b
-        >
-        Aplica tanto para tortas, postres y <b>productos incluidos en el menú</b
-        >, como para la elaboración de <b>comidas en fechas especiales.</b>
-        <br />Todos los productos <b>se pueden personalizar a pedido.</b>
-      </p>
-      <BaseButton>Realizar pedido</BaseButton>
-    </div>
-  </div>
-  <Image src={BgWave} alt="" class="img-wave" />
-  <Image src={Pan} alt="" class="img-pan" />
+	<SectionHeader>¿Cómo trabajamos?</SectionHeader>
+	<div class="como-trabajamos-content container my-12">
+		<div class="como-trabajamos-img-container">
+			<Image
+				src={BannerComoTrabajamos}
+				alt="¿Cómo trabajamos?"
+				class="como-trabajamos"
+			/>
+		</div>
+		<div class="como-trabajamos-inof">
+			<p class="como-trabajamos-info mb-8">
+				Tomamos pedidos con <b>48 horas de anticipación</b> como mínimo,
+				<b>vía WhatsApp.</b>
+				Aplica tanto para tortas, postres y <b
+					>productos incluidos en el menú</b
+				>, como para la elaboración de <b
+					>comidas en fechas especiales.</b
+				>
+				<br />Todos los productos <b>se pueden personalizar a pedido.</b
+				>
+			</p>
+			<BaseButton>Realizar pedido</BaseButton>
+		</div>
+	</div>
+	<Image src={BgWave} alt="" class="img-wave" />
+	<Image src={Pan} alt="" class="img-pan" />
 </section>
 
 <style>
-  .como-trabajamos-content {
-    padding: 16px 160px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    column-gap: 72px;
-  }
-  .como-trabajamos-img-container {
-    padding: 16px;
-    border: 1px solid var(--chocolate);
-  }
+	.como-trabajamos-content {
+		padding: 16px 160px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		column-gap: 72px;
+	}
+	.como-trabajamos-img-container {
+		padding: 16px;
+		border: 1px solid var(--chocolate);
+	}
 
-  .como-trabajamos-info {
-    display: block;
-    font-size: 20px;
-    line-height: 28px;
+	.como-trabajamos-info {
+		display: block;
+		font-size: 20px;
+		line-height: 28px;
 
-    b {
-      font-style: italic;
-      font-weight: 600;
-    }
-  }
+		b {
+			font-style: italic;
+			font-weight: 600;
+		}
+	}
 
-  .img-wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100dvw;
-    height: 100%;
-    z-index: -10;
-    object-fit: contain;
-    object-position: bottom center;
-  }
+	.img-wave {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100dvw;
+		height: 100%;
+		z-index: -10;
+		object-fit: contain;
+		object-position: bottom center;
+	}
 
-  .img-pan {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 210px;
-  }
+	.img-pan {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		width: 210px;
+	}
 </style>

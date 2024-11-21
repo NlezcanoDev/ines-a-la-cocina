@@ -1,3 +1,3 @@
-import type { App } from 'vue';
+import type { App } from 'vue'
 
-export default (_: App) => {};
+export default (_: App) => {}

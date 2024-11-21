@@ -1,31 +1,31 @@
 ---
-import ProductosView from "../../components/vue/ProductosView.vue"
-import SectionHeader from "../../components/astro/SectionHeader.astro"
-import { TipoProducto } from "../../data/productos.enum"
-import InfoProductosLayout from "../../layouts/InfoProductosLayout.astro"
+import ProductosView from '../../components/vue/ProductosView.vue'
+import SectionHeader from '../../components/astro/SectionHeader.astro'
+import { TipoProducto } from '../../data/productos.enum'
+import InfoProductosLayout from '../../layouts/InfoProductosLayout.astro'
 ---
 
 <section id="productos">
-  <SectionHeader>Productos</SectionHeader>
-  <InfoProductosLayout categoria="pastelería">
-    Gran variedad de <b>tortas, cupcakes y postres caseros.</b> Contamos tambien
-    con opciones <b>veganas, keto y apto celíaco.</b>
-  </InfoProductosLayout>
-  <ProductosView
-    client:only="vue"
-    id="pasteleria"
-    titulo="TORTAS Y POSTRES"
-    tipo={TipoProducto.Pasteleria}
-  />
-  <InfoProductosLayout categoria="panadería">
-    Elaboración de <b>panes, tartas y productos de panaderia</b> caseros, incluyendo
-    opciones <b>veganas, keto y apto celíaco.</b>
-  </InfoProductosLayout>
+	<SectionHeader>Productos</SectionHeader>
+	<InfoProductosLayout categoria="pastelería">
+		Gran variedad de <b>tortas, cupcakes y postres caseros.</b> Contamos tambien
+		con opciones <b>veganas, keto y apto celíaco.</b>
+	</InfoProductosLayout>
+	<ProductosView
+		client:only="vue"
+		id="pasteleria"
+		titulo="TORTAS Y POSTRES"
+		tipo={TipoProducto.Pasteleria}
+	/>
+	<InfoProductosLayout categoria="panadería">
+		Elaboración de <b>panes, tartas y productos de panaderia</b> caseros, incluyendo
+		opciones <b>veganas, keto y apto celíaco.</b>
+	</InfoProductosLayout>
 
-  <ProductosView
-    client:only="vue"
-    id="panaderia"
-    titulo="PANES Y TARTAS"
-    tipo={TipoProducto.Panaderia}
-  />
+	<ProductosView
+		client:only="vue"
+		id="panaderia"
+		titulo="PANES Y TARTAS"
+		tipo={TipoProducto.Panaderia}
+	/>
 </section>

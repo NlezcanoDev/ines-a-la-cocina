@@ -1,24 +1,23 @@
 .swiper-button-prev,
-.swiper-button-next{
-    position: absolute;
-    width: 30px !important;
-    height: 30px !important;
-    border-radius: 15px !important;
-    background-color: var(--orange) !important;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
+.swiper-button-next {
+	position: absolute;
+	width: 30px !important;
+	height: 30px !important;
+	border-radius: 15px !important;
+	background-color: var(--orange) !important;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1000;
 }
 
 .swiper-button-next {
-    right: 35px;
-
+	right: 35px;
 }
 
 .swiper-button-prev {
-    left: 35px;
+	left: 35px;
 }
 
 .swiper-button-disabled {
-    display: none !important;
+	display: none !important;
 }

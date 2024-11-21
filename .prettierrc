@@ -1,0 +1,19 @@
+{
+	"files": ["**/*.ts", "**/*.vue", "*.css"],
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"printWidth": 80,
+	"useTabs": true,
+	"tabWidth": 4,
+	"semi": false,
+	"singleQuote": true,
+	"plugins": ["prettier-plugin-astro"],
+	"overrides": [
+		{
+			"files": "*.astro",
+			"options": {
+				"parser": "astro"
+			}
+		}
+	]
+}

@@ -1,123 +1,128 @@
 ---
-import { Image } from "astro:assets"
-import BaseButton from "../../components/astro/BaseButton.astro"
-import BannerHero from "../../assets/img/banner-hero.png"
-import Amasador from "../../assets/icons/png/amasador.png"
-import Bagel from "../../assets/icons/png/bagel.png"
-import Pretzel from "../../assets/icons/png/pretzel.png"
-import Trigo from "../../assets/icons/png/trigo.png"
-import WaveHero from "../../assets/img/wave-hero.svg"
+import { Image } from 'astro:assets'
+import BaseButton from '../../components/astro/BaseButton.astro'
+import BannerHero from '../../assets/img/banner-hero.png'
+import Amasador from '../../assets/icons/png/amasador.png'
+import Bagel from '../../assets/icons/png/bagel.png'
+import Pretzel from '../../assets/icons/png/pretzel.png'
+import Trigo from '../../assets/icons/png/trigo.png'
+import WaveHero from '../../assets/img/wave-hero.svg'
 ---
 
 <section id="hero" class="hero">
-  <div class="hero-banner container px-40">
-    <div class="hero-info ps-20">
-      <h1 class="text-5xl font-bold">INÉS A LA COCINA</h1>
-      <p>
-        Delicias horneadas con amor. La esencia de lo casero en cada creación
-      </p>
-      <BaseButton>Ver productos</BaseButton>
-    </div>
+	<div class="hero-banner container px-40">
+		<div class="hero-info ps-20">
+			<h1 class="text-5xl font-bold">INÉS A LA COCINA</h1>
+			<p>
+				Delicias horneadas con amor. La esencia de lo casero en cada
+				creación
+			</p>
+			<BaseButton>Ver productos</BaseButton>
+		</div>
 
-    <Image src={BannerHero} alt="Inés a la cocina" class="hero-banner-img" />
-  </div>
-  <div class="hero-items container px-40">
-    <div class="hero-item">
-      <Image src={Pretzel} alt="" />
-      <h3>Productos caseros</h3>
-      <p>Panes, pasteles y postres que te harán sentir como en casa.</p>
-    </div>
-    <div class="hero-item">
-      <Image src={Bagel} alt="" />
-      <h3>Keto y apto celíaco</h3>
-      <p>Opciones Keto y apto celíaco para un disfrute seguro.</p>
-    </div>
-    <div class="hero-item">
-      <Image src={Amasador} alt="" />
-      <h3>Elaboración por encargo</h3>
-      <p>Pedidos con anticipación y menú de fechas festivas.</p>
-    </div>
-  </div>
-  <Image src={WaveHero} alt="" class="img-wave" />
-  <Image src={Trigo} alt="" class="img-trigo" />
+		<Image
+			src={BannerHero}
+			alt="Inés a la cocina"
+			class="hero-banner-img"
+		/>
+	</div>
+	<div class="hero-items container px-40">
+		<div class="hero-item">
+			<Image src={Pretzel} alt="" />
+			<h3>Productos caseros</h3>
+			<p>Panes, pasteles y postres que te harán sentir como en casa.</p>
+		</div>
+		<div class="hero-item">
+			<Image src={Bagel} alt="" />
+			<h3>Keto y apto celíaco</h3>
+			<p>Opciones Keto y apto celíaco para un disfrute seguro.</p>
+		</div>
+		<div class="hero-item">
+			<Image src={Amasador} alt="" />
+			<h3>Elaboración por encargo</h3>
+			<p>Pedidos con anticipación y menú de fechas festivas.</p>
+		</div>
+	</div>
+	<Image src={WaveHero} alt="" class="img-wave" />
+	<Image src={Trigo} alt="" class="img-trigo" />
 </section>
 
 <style>
-  .hero-banner {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 60vh;
-    align-items: center;
-  }
+	.hero-banner {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		height: 60vh;
+		align-items: center;
+	}
 
-  .hero-info {
-    height: 50vh;
-    margin-top: 100px;
+	.hero-info {
+		height: 50vh;
+		margin-top: 100px;
 
-    h1 {
-      color: var(--orange);
-      margin-bottom: 16px;
-    }
+		h1 {
+			color: var(--orange);
+			margin-bottom: 16px;
+		}
 
-    p {
-      color: var(--chocolate);
-      font-size: 20px;
-      line-height: 26px;
-      font-style: italic;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-  }
+		p {
+			color: var(--chocolate);
+			font-size: 20px;
+			line-height: 26px;
+			font-style: italic;
+			font-weight: 600;
+			margin-bottom: 24px;
+		}
+	}
 
-  .hero-banner-img {
-    position: absolute;
-    top: 30vh;
-    right: 0;
-    transform: translateY(-50%);
-    width: 780px;
-    z-index: 10;
-  }
+	.hero-banner-img {
+		position: absolute;
+		top: 30vh;
+		right: 0;
+		transform: translateY(-50%);
+		width: 780px;
+		z-index: 10;
+	}
 
-  .hero-items {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 0;
-  }
+	.hero-items {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		z-index: 0;
+	}
 
-  .hero-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 240px;
+	.hero-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 240px;
 
-    img {
-      width: 130px;
-    }
+		img {
+			width: 130px;
+		}
 
-    h3 {
-      color: var(--orange);
-      font-style: italic;
-      font-size: 20px;
-    }
-  }
+		h3 {
+			color: var(--orange);
+			font-style: italic;
+			font-size: 20px;
+		}
+	}
 
-  .img-wave {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    width: 100dvw;
-    height: 100%;
-    max-height: 480px;
-    z-index: -10;
-    object-fit: cover;
-  }
+	.img-wave {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		width: 100dvw;
+		height: 100%;
+		max-height: 480px;
+		z-index: -10;
+		object-fit: cover;
+	}
 
-  .img-trigo {
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 230px;
-  }
+	.img-trigo {
+		position: absolute;
+		top: -10px;
+		left: 0;
+		width: 230px;
+	}
 </style>
