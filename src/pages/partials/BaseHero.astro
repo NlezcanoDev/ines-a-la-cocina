@@ -10,8 +10,8 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 ---
 
 <section id="hero" class="hero">
-	<div class="hero-banner container px-40">
-		<div class="hero-info ps-20">
+	<div class="hero-banner container px-4 lg:px-20 xl:px-40">
+		<div class="hero-info xl:ps-20">
 			<h1 class="text-5xl font-bold">INÉS A LA COCINA</h1>
 			<p>
 				Delicias horneadas con amor. La esencia de lo casero en cada
@@ -26,7 +26,7 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 			class="hero-banner-img"
 		/>
 	</div>
-	<div class="hero-items container px-40">
+	<div class="hero-items container px-4 xl:px-40">
 		<div class="hero-item">
 			<Image src={Pretzel} alt="" />
 			<h3>Productos caseros</h3>
@@ -51,24 +51,23 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 	.hero-banner {
 		position: relative;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		height: 60vh;
+		grid-template-columns: 1fr;
+		justify-items: center;
 		align-items: center;
 	}
 
 	.hero-info {
-		height: 50vh;
-		margin-top: 100px;
-
+		margin-top: 60px;
 		h1 {
 			color: var(--orange);
+			font-size: 40px;
 			margin-bottom: 16px;
 		}
 
 		p {
 			color: var(--chocolate);
-			font-size: 20px;
-			line-height: 26px;
+			font-size: 18px;
+			line-height: 24px;
 			font-style: italic;
 			font-weight: 600;
 			margin-bottom: 24px;
@@ -76,19 +75,19 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 	}
 
 	.hero-banner-img {
-		position: absolute;
-		top: 30vh;
-		right: 0;
-		transform: translateY(-50%);
-		width: 780px;
+		width: calc(100% + 50px);
+		max-width: 480px;
+		margin-left: -10px;
 		z-index: 10;
 	}
 
 	.hero-items {
 		display: flex;
-		justify-content: space-between;
-		width: 100%;
+		flex-direction: column;
+		width: fit-content;
+		gap: 16px;
 		z-index: 0;
+		margin: 32px auto;
 	}
 
 	.hero-item {
@@ -120,9 +119,76 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 	}
 
 	.img-trigo {
-		position: absolute;
-		top: -10px;
-		left: 0;
-		width: 230px;
+		display: none;
+	}
+
+	/* TABLE SM */
+	@media (min-width: 640px) {
+		.hero-items {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	/* TABLET MD */
+	@media (min-width: 768px) {
+		.hero-banner {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 16px;
+			height: 40vh;
+		}
+	}
+
+	/* TABLET LG */
+	@media (min-width: 1024px) {
+		.hero-banner {
+			height: 50vh;
+		}
+		.hero-info {
+			height: 50vh;
+			margin-top: 100px;
+
+			p {
+				font-size: 20px;
+				line-height: 26px;
+			}
+		}
+
+		.hero-banner-img {
+			position: absolute;
+			top: 30vh;
+			right: 0;
+			transform: translateY(-50%) translateX(12vw);
+			width: 680px;
+			max-width: inherit;
+		}
+
+		.img-trigo {
+			display: block;
+			position: absolute;
+			top: -10px;
+			left: 0;
+			width: 230px;
+		}
+	}
+
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+		.hero-banner {
+			height: 60vh;
+		}
+
+		.hero-banner-img {
+			width: 700px;
+			transform: translateY(-50%) translateX(0);
+		}
+	}
+
+	/* DESKTOP LG */
+	@media (min-width: 1536px) {
+		.hero-banner-img {
+			width: 780px;
+		}
 	}
 </style>

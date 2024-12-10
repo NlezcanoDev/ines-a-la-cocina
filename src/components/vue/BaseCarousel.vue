@@ -76,29 +76,60 @@ watch(
 </template>
 
 <style scoped lang="css">
-.swiper {
-	width: calc(100% - 100px);
-	height: 436px;
-	margin-top: 24px;
-	margin-right: auto;
-	color: black;
-	overflow: hidden;
+.carousel-container {
+	display: none;
 }
 
-.swiper-wrapper {
-	transform: translate3d(60px, 0px, 0px);
-	padding: 8px;
+/* TABLET SM */
+@media (min-width: 640px) {
+	.carousel-container {
+		display: block;
+	}
+	.swiper {
+		width: calc(100% - 50px);
+		margin-top: 24px;
+		margin-right: auto;
+		color: black;
+		overflow: hidden;
+	}
+
+	.swiper-wrapper {
+		transform: translate3d(60px, 0px, 0px);
+		padding: 8px;
+	}
+
+	.swiper-nav {
+		display: grid;
+		place-content: center;
+		position: absolute;
+	}
+	.swiper-slide {
+		color: black;
+		width: 200px !important;
+		display: block;
+	}
 }
 
-.swiper-slide {
-	color: black;
-	width: 292px !important;
-	display: block;
+/* TABLET MD */
+@media (min-width: 768px) {
+	.swiper {
+		width: calc(100% - 65px);
+		padding: 0 !important;
+	}
+
+	.swiper-slide {
+		width: 270px !important;
+	}
 }
 
-.swiper-nav {
-	display: grid;
-	place-content: center;
-	position: absolute;
+/* TABLET LG */
+@media (min-width: 1024px) {
+	.swiper {
+		width: calc(100% - 100px);
+	}
+}
+
+/* DESKTOP */
+@media (min-width: 1280px) {
 }
 </style>

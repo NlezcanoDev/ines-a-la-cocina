@@ -7,8 +7,8 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 
 <section id="entregas" class="entregas">
 	<SectionHeader>Entregas</SectionHeader>
-	<div class="entregas-content container my-12">
-		<div class="entregas-inof">
+	<div class="entregas-content container my-12 px-8 lg:px-16 xl:px-40">
+		<div class="entregas-info">
 			<p class="entregas-info mb-8">
 				Las entregas se realizan en un <b
 					>punto de encuentro a acordar con el cliente, una vez
@@ -19,7 +19,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 			</p>
 			<BaseButton>Consultar</BaseButton>
 		</div>
-		<div class="entregas-iframe-container">
+		<div class="entregas-iframe-container mx-auto">
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13144.432285766752!2d-58.4798156!3d-34.550819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb696ab5cb4ed%3A0x887c745720a0e9b6!2sParque%20Saavedra!5e0!3m2!1ses!2sar!4v1729993056247!5m2!1ses!2sar"
 				width="568"
@@ -35,27 +35,24 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 
 <style>
 	.entregas-content {
-		padding: 16px 160px;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
 		align-items: center;
-		column-gap: 72px;
+		justify-items: center;
+		gap: 24px;
 	}
-	.entregas-iframe-container {
-		width: 600px;
-		height: 480px;
-		padding: 16px;
+	.entregas-img-container {
+		padding: 8px;
 		border: 1px solid var(--chocolate);
-
-		iframe {
-			border-radius: 8px;
-		}
+		margin-bottom: 16px;
+		max-width: 460px;
 	}
 
 	.entregas-info {
 		display: block;
-		font-size: 20px;
-		line-height: 28px;
+		font-size: 16px;
+		line-height: 20px;
+		max-width: 460px;
 
 		b {
 			font-style: italic;
@@ -72,6 +69,94 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 		z-index: -10;
 		object-fit: contain;
 		object-position: bottom center;
-		transform: scaleX(-1);
+	}
+
+	.img-pan {
+		display: none;
+	}
+
+	.entregas-iframe-container {
+		position: relative;
+		grid-row: 1;
+		display: grid;
+		place-content: center;
+		width: 100%;
+
+		iframe {
+			max-width: 300px;
+			height: 300px;
+		}
+	}
+
+	@media (min-width: 460px) {
+		.entregas-iframe-container {
+			width: 100%;
+
+			iframe {
+				max-width: 400px;
+				height: 400px;
+			}
+		}
+	}
+
+	/* TABLE SM */
+	@media (min-width: 640px) {
+		.entregas-info {
+			font-size: 20px;
+			line-height: 28px;
+		}
+	}
+
+	/* TABLET MD */
+	@media (min-width: 768px) {
+		.entregas-content {
+			padding: 16px 0;
+			grid-template-columns: repeat(2, 1fr) !important;
+
+			justify-items: stretch;
+			column-gap: 24px;
+		}
+
+		.entregas-info {
+			grid-row: 1;
+			grid-column: span 1;
+		}
+
+		.entregas-img-container {
+			padding: 16px;
+			margin-bottom: 16px;
+			grid-row: 1;
+			grid-column: span 2;
+		}
+	}
+
+	/* TABLET LG */
+	@media (min-width: 1024px) {
+		.entregas-content {
+			column-gap: 72px;
+		}
+
+		.entregas-iframe-container > iframe {
+			max-width: 568px;
+			height: 450px;
+		}
+	}
+
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+		.entregas-content {
+			padding: 16px 160px;
+		}
+		.img-pan {
+			display: block;
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			width: 210px;
+		}
+	}
+
+	/* DESKTOP LG */
+	@media (min-width: 1536px) {
 	}
 </style>

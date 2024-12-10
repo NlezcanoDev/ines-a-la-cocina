@@ -1,74 +1,126 @@
 ---
-import { Image } from "astro:assets"
-import BaseButton from "../components/astro/BaseButton.astro"
-import BannerPasteleria from "../assets/img/banner-pasteleria.png"
-import BannerPanaderia from "../assets/img/banner-panaderia.png"
-import Trigo from "../assets/icons/png/trigo.png"
+import { Image } from 'astro:assets'
+import BaseButton from '../components/astro/BaseButton.astro'
+import BannerPasteleria from '../assets/img/banner-pasteleria.png'
+import BannerPanaderia from '../assets/img/banner-panaderia.png'
+import Trigo from '../assets/icons/png/trigo.png'
 
 type Props = {
-  categoria: "pastelería" | "panadería"
+	categoria: 'pastelería' | 'panadería'
 }
 
 const { categoria } = Astro.props
 ---
 
-<div class="producto px-20 py-10">
-  <div class="producto-content container py-20 px-40">
-    <div>
-      <h3>{categoria}</h3>
-      <p>
-        <slot />
-      </p>
-      <BaseButton>Ver precios</BaseButton>
-    </div>
-  </div>
-  <Image
-    src={categoria === "pastelería" ? BannerPasteleria : BannerPanaderia}
-    alt={`seccion-${categoria}`}
-    class="banner-producto top-5"
-  />
-  <Image src={Trigo} alt="" class="img-trigo" />
+<div class="producto">
+	<!--  px-20 py-10 -->
+	<div
+		class="producto-content container my-4 lg:my-12 px-8 lg:px-16 xl:px-40"
+	>
+		<div>
+			<h3>{categoria}</h3>
+			<p>
+				<slot />
+			</p>
+			<BaseButton>Ver precios</BaseButton>
+		</div>
+	</div>
+	<Image
+		src={categoria === 'pastelería' ? BannerPasteleria : BannerPanaderia}
+		alt={`seccion-${categoria}`}
+		class="banner-producto xl:top-5"
+	/>
+	<Image src={Trigo} alt="" class="img-trigo" />
 </div>
 
 <style>
-  .producto {
-    position: relative;
-  }
+	.producto {
+		position: relative;
+	}
 
-  .producto-content {
-    background-color: white;
-    border-radius: 8px;
-    height: 400px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+	.producto-content {
+		background-color: white;
+		border-radius: 8px;
+		display: grid;
+		grid-template-columns: 1fr;
 
-    h3 {
-      color: var(--orange);
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 40px;
-      line-height: 64px;
-    }
+		h3 {
+			color: var(--orange);
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 40px;
+			line-height: 64px;
+		}
 
-    p {
-      font-size: 20px;
-      color: var(--chocolate);
-      font-style: italic;
-      margin-bottom: 24px;
-    }
-  }
+		p {
+			font-size: 20px;
+			color: var(--chocolate);
+			font-style: italic;
+			margin-bottom: 24px;
+		}
+	}
 
-  .banner-producto {
-    position: absolute;
-    right: 0;
-    height: 500px;
-    width: auto;
-  }
+	.banner-producto {
+		height: 300px;
+		width: auto;
+		margin-left: auto;
+	}
 
-  .img-trigo {
-    position: absolute;
-    top: -125px;
-    left: 0;
-    width: 230px;
-  }
+	.img-trigo {
+		display: none;
+	}
+
+	@media (min-width: 480px) {
+		.banner-producto {
+			height: 400px;
+		}
+	}
+
+	/* TABLE SM */
+	@media (min-width: 640px) {
+		.producto-content {
+			height: 400px;
+			grid-template-columns: repeat(2, 1fr);
+			align-items: center;
+		}
+		.banner-producto {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			height: 300px;
+		}
+	}
+
+	/* TABLET MD */
+	@media (min-width: 768px) {
+		.producto-content {
+		}
+		.banner-producto {
+			height: 360px;
+		}
+	}
+
+	/* TABLET LG */
+	@media (min-width: 1024px) {
+		.img-trigo {
+			display: block;
+			position: absolute;
+			top: -125px;
+			left: 0;
+			width: 230px;
+		}
+
+		.banner-producto {
+			height: 500px;
+		}
+	}
+
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+	}
+
+	/* DESKTOP LG */
+	@media (min-width: 1536px) {
+	}
 </style>

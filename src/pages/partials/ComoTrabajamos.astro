@@ -9,7 +9,7 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 
 <section id="como-trabajamos" class="como-trabajamos">
 	<SectionHeader>¿Cómo trabajamos?</SectionHeader>
-	<div class="como-trabajamos-content container my-12">
+	<div class="como-trabajamos-content container my-12 px-8 lg:px-16 xl:px-40">
 		<div class="como-trabajamos-img-container">
 			<Image
 				src={BannerComoTrabajamos}
@@ -38,21 +38,23 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 
 <style>
 	.como-trabajamos-content {
-		padding: 16px 160px;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
 		align-items: center;
-		column-gap: 72px;
+		justify-items: center;
 	}
 	.como-trabajamos-img-container {
-		padding: 16px;
+		padding: 8px;
 		border: 1px solid var(--chocolate);
+		margin-bottom: 16px;
+		max-width: 460px;
 	}
 
 	.como-trabajamos-info {
 		display: block;
-		font-size: 20px;
-		line-height: 28px;
+		font-size: 16px;
+		line-height: 20px;
+		max-width: 460px;
 
 		b {
 			font-style: italic;
@@ -72,9 +74,55 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 	}
 
 	.img-pan {
-		position: absolute;
-		bottom: 20px;
-		right: 20px;
-		width: 210px;
+		display: none;
+	}
+
+	/* TABLE SM */
+	@media (min-width: 640px) {
+		.como-trabajamos-info {
+			font-size: 20px;
+			line-height: 28px;
+		}
+	}
+
+	/* TABLET MD */
+	@media (min-width: 768px) {
+		.como-trabajamos-content {
+			padding: 16px 0;
+			grid-template-columns: repeat(2, 1fr) !important;
+
+			justify-items: stretch;
+			column-gap: 24px;
+		}
+
+		.como-trabajamos-img-container {
+			padding: 16px;
+			margin-bottom: 16px;
+		}
+	}
+
+	/* TABLET LG */
+	@media (min-width: 1024px) {
+		.como-trabajamos-content {
+			column-gap: 72px;
+		}
+	}
+
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+		.como-trabajamos-content {
+			padding: 16px 160px;
+		}
+		.img-pan {
+			display: block;
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			width: 210px;
+		}
+	}
+
+	/* DESKTOP LG */
+	@media (min-width: 1536px) {
 	}
 </style>

@@ -6,11 +6,8 @@ import {
 	TipoProducto,
 } from '../../data/productos.enum'
 import BaseCarousel from './BaseCarousel.vue'
-import type {
-	Presentacion,
-	Producto,
-	ProductoApto,
-} from '../../data/productos.types'
+import BaseAccordion from './BaseAccordion.vue'
+import type { Producto } from '../../data/productos.types'
 
 type Props = {
 	id: string
@@ -29,9 +26,9 @@ const productos = ref<Array<Producto>>([])
 onBeforeMount(() => {
 	categoriaSelected.value = categorias.value[0]
 })
-onMounted(
-	async () => await getProductos(props.tipo, categoriaSelected.value, true),
-)
+onMounted(async () => {
+	await getProductos(props.tipo, categoriaSelected.value, true)
+})
 
 const getCategorias = (tipo: TipoProducto): Array<string> => {
 	const categorias = Object.keys(
@@ -76,7 +73,7 @@ const handleClick = async (cat: string) => {
 
 <template>
 	<section>
-		<div class="categorias container px-40">
+		<div class="categorias container my-8 px-4 lg:px-8 xl:px-40">
 			<h2>{{ titulo }}</h2>
 			<div class="categorias-list">
 				<button
@@ -95,6 +92,7 @@ const handleClick = async (cat: string) => {
 				</button>
 			</div>
 		</div>
+		<BaseAccordion :productos="productos" />
 		<BaseCarousel :productos="productos" />
 	</section>
 </template>
@@ -106,32 +104,39 @@ section {
 .categorias {
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
 
 	h2 {
-		color: var(--chocolate);
-		font-size: 32px;
-		line-height: 54px;
+		color: var(--orange);
+		font-size: 22px;
+		line-height: 28px;
 		font-weight: bold;
+		text-wrap: nowrap;
+		padding-left: 8px;
 	}
 }
 
 .categorias-list {
-	display: inline-flex;
-	align-items: top;
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+	overflow-x: scroll;
+	padding-bottom: 6px;
 }
 
 .categoria-btn {
 	background-color: transparent;
 	color: var(--chocolate);
 	font-size: 16px;
+	line-height: 16px;
 	font-weight: 600;
-	padding: 16px;
+	padding: 8px;
 	text-transform: uppercase;
+	text-wrap: nowrap;
 
 	&:is(.selected) {
-		padding-bottom: 12px;
+		padding-bottom: 4px;
 	}
 
 	&:last-of-type {
@@ -141,5 +146,91 @@ section {
 
 .selected {
 	border-bottom: 4px solid var(--orange);
+}
+
+/* TABLE SM */
+@media (min-width: 640px) {
+	section {
+		padding-bottom: 0 !important;
+	}
+}
+
+/* TABLET MD */
+@media (min-width: 768px) {
+	.categoria-btn {
+		padding: 16px 18px;
+
+		&:is(.selected) {
+			padding-bottom: 12px;
+		}
+	}
+}
+
+/* TABLET LG */
+@media (min-width: 1024px) {
+	.categorias h2 {
+		padding-left: 16px;
+	}
+	.categoria-btn {
+		background-color: transparent;
+		color: var(--chocolate);
+		font-size: 16px;
+		font-weight: 600;
+		padding: 16px;
+		text-transform: uppercase;
+
+		&:is(.selected) {
+			padding-bottom: 12px;
+		}
+
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+}
+
+/* DESKTOP */
+@media (min-width: 1280px) {
+	.categorias {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		h2 {
+			color: var(--chocolate);
+			font-size: 32px;
+			line-height: 54px;
+		}
+	}
+
+	.categorias-list {
+		display: inline-flex;
+		align-items: top;
+		overflow-x: initial;
+		width: fit-content;
+	}
+
+	.categoria-btn {
+		background-color: transparent;
+		color: var(--chocolate);
+		font-size: 16px;
+		font-weight: 600;
+		padding: 16px;
+		text-transform: uppercase;
+
+		&:is(.selected) {
+			padding-bottom: 12px;
+		}
+
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+}
+
+/* DESKTOP LG */
+@media (min-width: 1536px) {
 }
 </style>

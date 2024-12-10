@@ -8,7 +8,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 
 <section id="sobre-mi" class="sobre-mi">
 	<SectionHeader>Sobre mí</SectionHeader>
-	<div class="sobre-mi-content container my-12">
+	<div class="sobre-mi-content container my-12 px-8 lg:px-16 xl:px-40">
 		<div class="sobre-mi-img-container">
 			<Image src={BannerSobreMi} alt="Sobre mí" class="sobre-mi" />
 		</div>
@@ -26,21 +26,23 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 
 <style>
 	.sobre-mi-content {
-		padding: 16px 160px;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
 		align-items: center;
-		column-gap: 72px;
+		justify-items: center;
 	}
 	.sobre-mi-img-container {
-		padding: 16px;
+		padding: 8px;
 		border: 1px solid var(--chocolate);
+		margin-bottom: 16px;
+		max-width: 460px;
 	}
 
 	.sobre-mi-info {
 		display: block;
-		font-size: 20px;
-		line-height: 28px;
+		font-size: 16px;
+		line-height: 20px;
+		max-width: 460px;
 
 		b {
 			font-style: italic;
@@ -60,9 +62,55 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 	}
 
 	.img-pan {
-		position: absolute;
-		bottom: 20px;
-		right: 20px;
-		width: 210px;
+		display: none;
+	}
+
+	/* TABLE SM */
+	@media (min-width: 640px) {
+		.sobre-mi-info {
+			font-size: 20px;
+			line-height: 28px;
+		}
+	}
+
+	/* TABLET MD */
+	@media (min-width: 768px) {
+		.sobre-mi-content {
+			padding: 16px 0;
+			grid-template-columns: repeat(2, 1fr) !important;
+
+			justify-items: stretch;
+			column-gap: 24px;
+		}
+
+		.sobre-mi-img-container {
+			padding: 16px;
+			margin-bottom: 16px;
+		}
+	}
+
+	/* TABLET LG */
+	@media (min-width: 1024px) {
+		.sobre-mi-content {
+			column-gap: 72px;
+		}
+	}
+
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+		.sobre-mi-content {
+			padding: 16px 160px;
+		}
+		.img-pan {
+			display: block;
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			width: 210px;
+		}
+	}
+
+	/* DESKTOP LG */
+	@media (min-width: 1536px) {
 	}
 </style>
