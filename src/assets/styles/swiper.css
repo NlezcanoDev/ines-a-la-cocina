@@ -1,23 +1,62 @@
 .swiper-button-prev,
-.swiper-button-next {
-	position: absolute;
-	width: 30px !important;
-	height: 30px !important;
-	border-radius: 15px !important;
-	background-color: var(--orange) !important;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 1000;
-}
-
-.swiper-button-next {
-	right: 35px;
-}
-
-.swiper-button-prev {
-	left: 35px;
-}
-
+.swiper-button-next,
 .swiper-button-disabled {
-	display: none !important;
+	display: none;
+}
+
+/* TABLE SM */
+@media (min-width: 640px) {
+	.swiper-button-prev,
+	.swiper-button-next {
+		position: absolute;
+		width: 30px !important;
+		height: 30px !important;
+		border-radius: 15px !important;
+		background-color: var(--orange) !important;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1000;
+	}
+
+	.swiper-button-next {
+		right: 8px;
+	}
+
+	.swiper-button-prev {
+		left: 8px;
+	}
+
+	.swiper-button-disabled {
+		display: none !important;
+	}
+}
+
+/* TABLET MD */
+@media (min-width: 768px) {
+	.swiper-button-next {
+		right: 16px;
+	}
+
+	.swiper-button-prev {
+		left: 16px;
+	}
+}
+
+/* TABLET LG */
+@media (min-width: 1024px) {
+	.swiper-button-next {
+		right: 35px;
+	}
+
+	.swiper-button-prev {
+		left: 35px;
+	}
+}
+
+/* DESKTOP */
+@media (min-width: 1280px) {
+}
+
+/* DESKTOP LG */
+@media (min-width: 1536px) {
 }

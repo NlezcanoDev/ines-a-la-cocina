@@ -1,6 +1,7 @@
 @import url(./layout.css);
 @import url(./colors.css);
 @import url(./typography.css);
+@import url(./transiciones.css);
 @import url(./swiper.css);
 
 * {
@@ -11,6 +12,20 @@
 
 :root {
 	--hover-transition: all 0.2s ease-in;
+}
+
+html {
+	width: 100dvw;
+	height: 100dvh;
+	position: relative;
+}
+
+body {
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow-y: scroll;
 }
 
 img {
