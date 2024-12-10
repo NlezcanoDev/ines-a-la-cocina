@@ -1,13 +1,22 @@
 ---
 import { Image } from 'astro:assets'
 import LogoLandscape from '../../assets/icons/logo/logo-landscape.svg'
+import Menu from '../../assets/icons/svg/menu.svg'
+import Close from '../../assets/icons/svg/close.svg'
 ---
 
 <header>
-	<nav class="container px-40">
+	<nav class="container px-4 lg:px-10 xl:px-40">
 		<a href="#hero" class="nav-btn">
 			<Image src={LogoLandscape} alt="Inés en la cocina" class="logo" />
 		</a>
+		<a id="menu-btn" role="button">
+			<Image src={Menu} alt="Mostrar menú" class="menu-btn" />
+		</a>
+		<a id="close-btn" role="button" class="hidden">
+			<Image src={Close} alt="Cerrar menú" class="close-btn" />
+		</a>
+
 		<ul>
 			<li><a href="#sobre-mi" class="nav-btn">SOBRE MI</a></li>
 			<li><a href="#productos" class="nav-btn">PRODUCTOS</a></li>
@@ -18,12 +27,66 @@ import LogoLandscape from '../../assets/icons/logo/logo-landscape.svg'
 			<li><a href="#contacto" class="nav-btn">CONTACTO</a></li>
 		</ul>
 	</nav>
+	<div id="menu" class="hidden">
+		<ul class="py-10 pe-4 md:pe-14 lg:pe-10">
+			<li><a href="#sobre-mi" class="nav-btn">SOBRE MI</a></li>
+			<li><a href="#productos" class="nav-btn">PRODUCTOS</a></li>
+			<li>
+				<a href="#como-trabajamos" class="nav-btn">CÓMO TRABAJAMOS</a>
+			</li>
+			<li><a href="#entregas" class="nav-btn">ENTREGAS</a></li>
+			<li><a href="#contacto" class="nav-btn">CONTACTO</a></li>
+		</ul>
+	</div>
 	<div class="wave"></div>
 </header>
 
 <script is:inline>
-	const navButtons = document.querySelectorAll('.nav-btn')
+	const menuBtn = document.querySelector('#menu-btn')
+	const closeBtn = document.querySelector('#close-btn')
+	const menu = document.querySelector('#menu')
+	const menuOptions = document.querySelectorAll('#menu a')
 
+	menuBtn.addEventListener('click', showMenu)
+	closeBtn.addEventListener('click', hideMenu)
+	for (option of menuOptions) {
+		option.addEventListener('click', hideMenu)
+	}
+
+	function showMenu() {
+		menuBtn.className = 'fade-out'
+		closeBtn.className = 'hidden'
+		menu.className = 'menu fade-in'
+
+		setTimeout(() => {
+			menuBtn.className = 'hidden'
+			closeBtn.className = 'fade-in'
+		}, 150)
+
+		setTimeout(() => {
+			closeBtn.classList = ''
+			menu.classList.remove('fade-in')
+		}, 300)
+	}
+
+	function hideMenu() {
+		closeBtn.className = 'fade-out'
+		menuBtn.className = 'hidden'
+		menu.className = 'menu fade-out'
+
+		setTimeout(() => {
+			closeBtn.className = 'hidden'
+			menuBtn.className = 'fade-in'
+			menu.className = 'hidden'
+		}, 150)
+
+		setTimeout(() => {
+			menuBtn.classList = ''
+		}, 300)
+	}
+
+	// TRANSICIONES
+	const navButtons = document.querySelectorAll('.nav-btn')
 	for (let i = 0; i < navButtons.length; i++) {
 		const elem = navButtons[i]
 
@@ -50,7 +113,7 @@ import LogoLandscape from '../../assets/icons/logo/logo-landscape.svg'
 					stamp,
 					duration,
 					scrollEndElemTop,
-					startScrollOffset
+					startScrollOffset,
 				)
 			})
 		})
@@ -61,7 +124,7 @@ import LogoLandscape from '../../assets/icons/logo/logo-landscape.svg'
 		currentTime,
 		duration,
 		scrollEndElemTop,
-		startScrollOffset
+		startScrollOffset,
 	) => {
 		const runtime = currentTime - startTime
 		let progress = runtime / duration
@@ -79,7 +142,7 @@ import LogoLandscape from '../../assets/icons/logo/logo-landscape.svg'
 					currentTime,
 					duration,
 					scrollEndElemTop,
-					startScrollOffset
+					startScrollOffset,
 				)
 			})
 		}
@@ -88,29 +151,13 @@ import LogoLandscape from '../../assets/icons/logo/logo-landscape.svg'
 	const easeInCubic = (t) => t * t * t
 </script>
 <style>
-	.wave {
-		--mask: radial-gradient(
-					38.59px at 50% calc(100% - 53px),
-					#000 99%,
-					#0000 101%
-				)
-				calc(50% - 40px) 0/80px 100%,
-			radial-gradient(
-					38.59px at 50% calc(100% + 33px),
-					#0000 99%,
-					#000 101%
-				)
-				50% calc(100% - 20px) / 80px 100% repeat-x;
-		-webkit-mask: var(--mask);
-		mask: var(--mask);
-	}
-
 	header {
 		position: sticky;
 		top: 0;
-		width: 100%;
-		height: 80px;
-		padding-top: 16px;
+		left: 0;
+		width: 100dvw;
+		height: 56px;
+		padding-top: 12px;
 		padding-bottom: 8px;
 		color: white;
 		background-color: var(--chocolate);
@@ -118,43 +165,166 @@ import LogoLandscape from '../../assets/icons/logo/logo-landscape.svg'
 	}
 
 	.logo {
+		width: 132px;
 		display: inline-block;
-		width: fit-content;
 		pointer-events: none;
+	}
+
+	a {
+		cursor: pointer;
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		ul {
+			display: none;
+		}
+
+		a {
+			font-size: 12px;
+		}
+	}
+
+	.menu-btn,
+	.close-btn {
+		width: 20px;
+	}
+
+	.menu {
+		width: 70vw;
+		height: 100vh;
+		position: fixed;
+		top: 56px;
+		right: 0;
+		background-color: var(--chocolate);
+		z-index: 6000 !important;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		animation: fade-in 300ms ease-in;
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			align-items: end;
+			gap: 16px;
+		}
+
+		a {
+			font-size: 18px;
+		}
 	}
 
 	.wave {
 		position: sticky;
 		top: 48px;
 		display: block;
-		height: 40px;
+		height: 24px;
 		background: var(--chocolate);
 		-webkit-mask: var(--mask);
 		mask: var(--mask);
 		z-index: 1000;
 	}
-
-	nav,
-	ul {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+	.wave {
+		--mask: radial-gradient(
+					33.65px at 50% calc(100% - 45.6px),
+					#000 99%,
+					#0000 101%
+				)
+				calc(50% - 32px) 0/64px 100%,
+			radial-gradient(
+					33.65px at 50% calc(100% + 29.6px),
+					#0000 99%,
+					#000 101%
+				)
+				50% calc(100% - 16px) / 64px 100% repeat-x;
+		-webkit-mask: var(--mask);
+		mask: var(--mask);
 	}
 
-	li {
-		list-style: none;
-		display: inline-flex;
-		margin: 0 12px;
-		color: var(--lime);
-		transition: var(--hover-transition);
+	/* TABLET LG */
+	@media (min-width: 1024px) {
+		header {
+			height: 64px;
+		}
 
-		&:hover,
-		&:active {
-			color: var(--orange);
+		.logo {
+			width: 156px;
+		}
+
+		.menu {
+			width: 40vw;
+		}
+
+		.wave {
+			height: 32px;
 		}
 	}
 
-	a {
-		cursor: pointer;
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+		header {
+			height: 80px;
+		}
+
+		.logo {
+			width: 190px;
+		}
+
+		.menu-btn,
+		.close-btn {
+			display: none !important;
+		}
+
+		nav {
+			ul {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			li {
+				list-style: none;
+				display: inline-flex;
+				margin: 0 12px;
+				color: var(--lime);
+				transition: var(--hover-transition);
+
+				&:hover,
+				&:active {
+					color: var(--orange);
+				}
+			}
+
+			a {
+				font-size: 16px;
+			}
+		}
+
+		a {
+			font-size: 16px;
+		}
+
+		.wave {
+			height: 40px;
+		}
+
+		.wave {
+			--mask: radial-gradient(
+						38.59px at 50% calc(100% - 53px),
+						#000 99%,
+						#0000 101%
+					)
+					calc(50% - 40px) 0/80px 100%,
+				radial-gradient(
+						38.59px at 50% calc(100% + 33px),
+						#0000 99%,
+						#000 101%
+					)
+					50% calc(100% - 20px) / 80px 100% repeat-x;
+		}
 	}
 </style>

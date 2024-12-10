@@ -6,10 +6,10 @@ import Instagram from '../../assets/icons/svg/instagram-logo.svg'
 
 <footer id="contacto">
 	<div class="wave"></div>
-	<div>
+	<div class="content">
 		<p>Ciudad Autónoma de Buenos Aires, Argentina</p>
 		<p>(+54 9) 11 6539-2658</p>
-		<Image src={Logo} alt="Logo de Inés a la cocina" class="mx-auto my-8" />
+		<Image src={Logo} alt="Logo de Inés a la cocina" class="mx-auto logo" />
 		<div class="redes">
 			<span>Seguinos en redes</span>
 			<Image src={Instagram} alt="Instagram" />
@@ -26,10 +26,7 @@ import Instagram from '../../assets/icons/svg/instagram-logo.svg'
 
 <style>
 	footer {
-		position: relative;
 		width: 100%;
-		padding-top: 16px;
-		margin-top: 16px;
 		padding-bottom: 24px;
 		color: white;
 		background-color: #724832ea;
@@ -39,18 +36,28 @@ import Instagram from '../../assets/icons/svg/instagram-logo.svg'
 		text-align: center;
 		z-index: 1000;
 
-		p {
-			font-size: 20px;
-			line-height: 28px;
+		.content p {
+			font-size: 16px;
+			line-height: 22px;
 			text-align: center;
 			color: white;
 		}
 	}
 
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.logo {
+		width: 162px;
+	}
+
 	.redes {
 		display: inline-flex;
 		gap: 4px;
-		font-size: 20px;
+		font-size: 16px;
 
 		img {
 			margin-left: 12px;
@@ -74,15 +81,44 @@ import Instagram from '../../assets/icons/svg/instagram-logo.svg'
 	}
 
 	.wave {
-		position: absolute;
-		top: -40px;
-		transform: rotate(180deg);
+		position: initial;
+		transform: rotate(180deg) translateY(100%);
 		display: block;
 		height: 40px;
 		width: 100dvw;
 		background: #724832ea;
 		-webkit-mask: var(--mask);
 		mask: var(--mask);
-		z-index: 10000;
+		z-index: 999;
+	}
+
+	.referencias {
+		font-size: 12px;
+		margin-top: 16px;
+		a {
+			color: initial;
+			text-decoration: underline;
+		}
+	}
+
+	@media (min-width: 1024) {
+		.content p,
+		.redes {
+			font-size: 18px;
+			line-height: 24px;
+		}
+	}
+
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+		.content p,
+		.redes {
+			font-size: 20px;
+		}
+
+		.logo {
+			width: 170px;
+			margin: 32px;
+		}
 	}
 </style>

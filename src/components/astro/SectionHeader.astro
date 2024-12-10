@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 import Liston from '../../assets/icons/png/liston.png'
 ---
 
-<div class="section-header container px-40">
+<div class="section-header container px-4 lg:px-10 xl:px-40">
 	<Image src={Liston} alt="" class="section-header-liston" />
 	<div class="section-header-ribbon">
 		<h2>
@@ -25,7 +25,7 @@ import Liston from '../../assets/icons/png/liston.png'
 	}
 
 	.section-header-ribbon {
-		font-size: 28px;
+		font-size: 16px;
 		font-weight: bold;
 		color: #fff;
 		text-transform: uppercase;
@@ -45,9 +45,66 @@ import Liston from '../../assets/icons/png/liston.png'
 		);
 		background: var(--chocolate);
 		width: fit-content;
+		min-width: 240px;
+		text-align: center;
+
+		h2 {
+			display: inline-block;
+			padding: 4px 0;
+		}
 	}
 	.section-header-liston {
-		height: 36px;
-		width: auto;
+		height: auto;
+		width: 70px;
+	}
+
+	@media (min-width: 480px) {
+		.section-header-liston {
+			width: auto;
+			max-width: 120px;
+		}
+	}
+
+	/* TABLE SM */
+	@media (min-width: 640px) {
+		.section-header-ribbon {
+			font-size: 20px;
+			min-width: 280px;
+		}
+		.section-header-liston {
+			max-width: 160px;
+		}
+	}
+
+	/* TABLET MD */
+	@media (min-width: 768px) {
+		.section-header-ribbon {
+			font-size: 22px;
+			min-width: none;
+		}
+
+		.section-header-liston {
+			height: 36px;
+			width: auto;
+			max-width: inherit;
+		}
+	}
+
+	/* TABLET LG */
+	@media (min-width: 1024px) {
+		.section-header {
+			font-size: 24px;
+		}
+	}
+
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+		.section-header {
+			font-size: 28px;
+		}
+	}
+
+	/* DESKTOP LG */
+	@media (min-width: 1536px) {
 	}
 </style>
