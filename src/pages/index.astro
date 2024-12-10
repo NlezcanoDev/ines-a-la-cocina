@@ -13,9 +13,9 @@ import Productos from './partials/Productos.astro'
 import WhatsappButton from '../components/astro/whatsappButton.astro'
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Inés a la cocina">
 	<BaseNavbar />
-	<main style={`background-image: url(${BackgroundParallax}`}>
+	<main>
 		<BaseHero />
 		<SobreMi />
 		<Productos client:visible />
@@ -23,7 +23,7 @@ import WhatsappButton from '../components/astro/whatsappButton.astro'
 		<InfoEntregas />
 	</main>
 	<BaseFooter />
-	<Image src={BackgroundParallax} alt="" class="parallax" />
+	<!-- <Image src={BackgroundParallax} alt="" class="parallax" /> -->
 	<WhatsappButton />
 </Layout>
 
@@ -61,7 +61,28 @@ import WhatsappButton from '../components/astro/whatsappButton.astro'
 		width: 100vw;
 		background-size: cover;
 		z-index: -100;
-		top: 0px;
+		background-size: auto;
+		top: 0;
 		right: 0;
+	}
+
+	/* TABLE SM */
+	@media (min-width: 640px) {
+	}
+
+	/* TABLET MD */
+	@media (min-width: 768px) {
+	}
+
+	/* TABLET LG */
+	@media (min-width: 1024px) {
+	}
+
+	/* DESKTOP */
+	@media (min-width: 1280px) {
+	}
+
+	/* DESKTOP LG */
+	@media (min-width: 1536px) {
 	}
 </style>
