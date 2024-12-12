@@ -15,7 +15,7 @@ defineProps<Props>()
 </script>
 
 <template>
-	<div class="card swiper-slide" v-memo="producto.img">
+	<div class="card swiper-slide">
 		<div
 			v-if="producto.img"
 			:id="`img-${producto.id.toString()}`"
@@ -61,7 +61,6 @@ defineProps<Props>()
 
 <style scoped lang="css">
 .card {
-	width: auto;
 	height: 290px;
 	background-color: white;
 	box-shadow: 2px 2px 4px 0px #72483233;
@@ -70,11 +69,12 @@ defineProps<Props>()
 	grid-template-columns: 1fr;
 	grid-template-rows: 140px auto;
 	gap: 8px;
-	margin: 8px auto;
+	margin: 8px 0;
+	overflow: hidden;
 }
 
 .card-img {
-	height: 100%;
+	height: 140px;
 	overflow: hidden;
 }
 
@@ -115,20 +115,15 @@ defineProps<Props>()
 	column-gap: 8px;
 }
 
-@media (min-width: 480px) {
-	.card {
-		max-width: 230px;
-	}
-}
-
 /* TABLE SM */
 @media (min-width: 640px) {
 	.card {
-		width: 200px;
 		height: 326px;
-		margin: 8px;
-		max-width: none;
 		grid-template-rows: 144px auto;
+	}
+
+	.card-img {
+		height: 144px;
 	}
 
 	.card-content {
@@ -140,18 +135,25 @@ defineProps<Props>()
 @media (min-width: 768px) {
 	.card {
 		height: 340px;
-		grid-template-rows: 160px auto;
+		grid-template-rows: 140px auto;
+	}
+
+	.card-img {
+		height: 140px;
 	}
 	.card-content {
-		padding: 18px;
+		padding: 14px;
 
 		h3 {
-			font-size: 22px;
+			font-size: 20px;
+			line-height: 22px;
+			text-overflow: ellipsis;
+			text-wrap: nowrap;
 		}
 
 		p {
-			font-size: 16px;
-			line-height: 20px;
+			font-size: 14px;
+			line-height: 18px;
 		}
 	}
 }
@@ -159,24 +161,53 @@ defineProps<Props>()
 /* TABLET LG */
 @media (min-width: 1024px) {
 	.card {
-		width: 100%;
-		height: 420px;
-		margin: 8px 16px;
-		grid-template-rows: 200px auto;
+		height: 360px;
+		grid-template-rows: 180px auto;
+	}
+
+	.card-img {
+		height: 180px;
 	}
 
 	.card-content {
-		padding: 24px;
-		h3 {
+		padding: 16px;
+		/* h3 {
 			font-size: 24px;
-		}
+		} */
 	}
 }
 
 /* DESKTOP */
 @media (min-width: 1280px) {
 	.card {
+		grid-template-rows: 200px auto;
+		gap: 16px;
 		height: 436px;
+	}
+
+	.card-img {
+		height: 200px;
+	}
+
+	.card-content {
+		padding: 18px;
+		h3 {
+			font-size: 24px;
+			margin-bottom: 12px;
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 22px;
+		}
+	}
+
+	.card-categorias {
+		gap: 18px;
+	}
+
+	.card-categorias img {
+		width: 30px;
 	}
 }
 

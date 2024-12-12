@@ -1,18 +1,16 @@
 <script setup lang="ts">
-import type { Producto } from '../../data/productos.types'
+import { ref } from 'vue'
 import ProductCard from './ProductCard.vue'
 import ChevronDown from '../../assets/icons/chevron/chevron-down.svg'
-
-import { ref } from 'vue'
+import type { Producto } from '../../data/productos.types'
 
 type Props = {
 	productos: Array<Producto>
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 const isAccordionOpen = ref(false)
 
 const toggleAccordion = (val: boolean) => {
-	console.log('val', val)
 	isAccordionOpen.value = val
 }
 </script>
@@ -55,6 +53,7 @@ const toggleAccordion = (val: boolean) => {
 .accordion-open {
 	max-height: 2000px;
 	transition: max-height 1s ease-out;
+	padding-bottom: 15px;
 }
 
 .toggle-container {

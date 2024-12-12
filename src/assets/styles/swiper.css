@@ -55,6 +55,13 @@
 
 /* DESKTOP */
 @media (min-width: 1280px) {
+	.swiper-button-prev,
+	.swiper-button-next {
+		position: absolute;
+		width: 40px !important;
+		height: 40px !important;
+		border-radius: 20px !important;
+	}
 }
 
 /* DESKTOP LG */

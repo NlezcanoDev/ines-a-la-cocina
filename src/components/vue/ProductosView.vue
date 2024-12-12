@@ -73,7 +73,7 @@ const handleClick = async (cat: string) => {
 
 <template>
 	<section>
-		<div class="categorias container my-8 px-4 lg:px-8 xl:px-40">
+		<div class="categorias container my-8 px-4 md:px-2 lg:px-12 xl:px-20">
 			<h2>{{ titulo }}</h2>
 			<div class="categorias-list">
 				<button
@@ -174,7 +174,7 @@ section {
 	.categoria-btn {
 		background-color: transparent;
 		color: var(--chocolate);
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: 600;
 		padding: 16px;
 		text-transform: uppercase;

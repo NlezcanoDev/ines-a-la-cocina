@@ -43,7 +43,7 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 			<p>Pedidos con anticipación y menú de fechas festivas.</p>
 		</div>
 	</div>
-	<Image src={WaveHero} alt="" class="img-wave" />
+	<Image src={WaveHero} alt="" class="img-wave-hero" />
 	<Image src={Trigo} alt="" class="img-trigo" />
 </section>
 
@@ -107,7 +107,7 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 		}
 	}
 
-	.img-wave {
+	.img-wave-hero {
 		position: absolute;
 		top: -40px;
 		left: 0;
@@ -137,6 +137,12 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 16px;
 			height: 40vh;
+		}
+
+		.img-wave-hero {
+			max-height: none;
+			transform: scaleY(60%);
+			transform-origin: top;
 		}
 	}
 
@@ -182,6 +188,11 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 		.hero-banner-img {
 			width: 700px;
 			transform: translateY(-50%) translateX(0);
+		}
+
+		.img-wave-hero {
+			transform: scaleY(60%);
+			transform-origin: top;
 		}
 	}
 

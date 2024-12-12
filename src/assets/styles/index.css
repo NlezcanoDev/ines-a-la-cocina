@@ -2,6 +2,7 @@
 @import url(./colors.css);
 @import url(./typography.css);
 @import url(./transiciones.css);
+@import url(./common.css);
 @import url(./swiper.css);
 
 * {

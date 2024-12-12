@@ -1,0 +1,41 @@
+.img-wave {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 50vh;
+	z-index: -10;
+	object-fit: cover;
+	object-position: bottom center;
+}
+
+/* TABLE SM */
+@media (min-width: 640px) {
+}
+
+/* TABLET MD */
+@media (min-width: 768px) {
+}
+
+/* TABLET LG */
+@media (min-width: 1024px) {
+	.img-wave {
+		width: 100dvw;
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+/* DESKTOP */
+@media (min-width: 1280px) {
+}
+
+/* DESKTOP LG */
+@media (min-width: 1536px) {
+	.img-wave {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		transform: scaleY(60%);
+		transform-origin: bottom;
+	}
+}

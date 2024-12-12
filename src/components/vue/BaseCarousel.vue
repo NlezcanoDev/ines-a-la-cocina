@@ -44,8 +44,32 @@ watch(
 		<Swiper
 			class="swiper"
 			:modules="[Autoplay, Navigation]"
-			:space-between="24"
-			:slides-per-view="4"
+			:breakpoints="{
+				640: {
+					slidesPerView: 2.75,
+					spaceBetween: 16,
+				},
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 18,
+				},
+				860: {
+					slidesPerView: 3.5,
+					spaceBetween: 18,
+				},
+				1024: {
+					slidesPerView: 4,
+					spaceBetween: 18,
+				},
+				1280: {
+					slidesPerView: 4,
+					spaceBetween: 24,
+				},
+				1536: {
+					slidesPerView: 5.5,
+					spaceBetween: 30,
+				},
+			}"
 			:loop="false"
 			:normalizeSlideIndex="true"
 			:initialState="0"
@@ -105,7 +129,6 @@ watch(
 	}
 	.swiper-slide {
 		color: black;
-		width: 200px !important;
 		display: block;
 	}
 }
@@ -114,11 +137,7 @@ watch(
 @media (min-width: 768px) {
 	.swiper {
 		width: calc(100% - 65px);
-		padding: 0 !important;
-	}
-
-	.swiper-slide {
-		width: 270px !important;
+		padding: 0 10px !important;
 	}
 }
 
@@ -131,5 +150,8 @@ watch(
 
 /* DESKTOP */
 @media (min-width: 1280px) {
+	.swiper {
+		max-width: 1820px;
+	}
 }
 </style>

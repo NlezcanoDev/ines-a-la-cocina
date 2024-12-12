@@ -19,7 +19,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 			</p>
 			<BaseButton>Consultar</BaseButton>
 		</div>
-		<div class="entregas-iframe-container mx-auto">
+		<div class="entregas-iframe-container mx-auto px-4">
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13144.432285766752!2d-58.4798156!3d-34.550819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb696ab5cb4ed%3A0x887c745720a0e9b6!2sParque%20Saavedra!5e0!3m2!1ses!2sar!4v1729993056247!5m2!1ses!2sar"
 				width="568"
@@ -59,16 +59,8 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 			font-weight: 600;
 		}
 	}
-
 	.img-wave {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100dvw;
-		height: 100%;
-		z-index: -10;
-		object-fit: contain;
-		object-position: bottom center;
+		transform: scaleX(-1);
 	}
 
 	.img-pan {
@@ -110,7 +102,6 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 	/* TABLET MD */
 	@media (min-width: 768px) {
 		.entregas-content {
-			padding: 16px 0;
 			grid-template-columns: repeat(2, 1fr) !important;
 
 			justify-items: stretch;

@@ -18,12 +18,12 @@ import WhatsappButton from '../components/astro/whatsappButton.astro'
 	<main>
 		<BaseHero />
 		<SobreMi />
-		<Productos client:visible />
+		<Productos />
 		<ComoTrabajamos />
 		<InfoEntregas />
 	</main>
 	<BaseFooter />
-	<!-- <Image src={BackgroundParallax} alt="" class="parallax" /> -->
+	<Image src={BackgroundParallax} alt="" class="parallax" />
 	<WhatsappButton />
 </Layout>
 
@@ -56,14 +56,7 @@ import WhatsappButton from '../components/astro/whatsappButton.astro'
 	}
 
 	.parallax {
-		position: fixed;
-		height: 100vh;
-		width: 100vw;
-		background-size: cover;
-		z-index: -100;
-		background-size: auto;
-		top: 0;
-		right: 0;
+		display: none;
 	}
 
 	/* TABLE SM */
@@ -72,6 +65,17 @@ import WhatsappButton from '../components/astro/whatsappButton.astro'
 
 	/* TABLET MD */
 	@media (min-width: 768px) {
+		.parallax {
+			display: block;
+			position: fixed;
+			height: 100vh;
+			width: 100vw;
+			background-size: cover;
+			z-index: -100;
+			background-size: auto;
+			top: 0;
+			right: 0;
+		}
 	}
 
 	/* TABLET LG */
