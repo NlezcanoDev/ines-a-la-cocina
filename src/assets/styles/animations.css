@@ -1,0 +1,85 @@
+.animated {
+	animation-timing-function: ease-in-out;
+	animation-duration: 1000ms;
+	animation-fill-mode: forwards;
+}
+
+.slide-left {
+	animation-name: slide-left;
+}
+
+.slide-right {
+	animation-name: slide-right;
+}
+
+.slide-bottom {
+	animation-name: slide-bottom;
+}
+
+.fade-in {
+	animation-name: fade-in;
+}
+
+@media (min-width: 1280px) {
+	.animated {
+		animation-duration: 1500ms;
+	}
+}
+
+@keyframes slide-left {
+	from {
+		transform: translateX(-50vw);
+		opacity: 0;
+	}
+
+	to {
+		transform: initial;
+		opacity: 1;
+	}
+}
+
+@keyframes slide-right {
+	from {
+		transform: translateX(50vw);
+		opacity: 0;
+	}
+
+	to {
+		transform: initial;
+		opacity: 1;
+	}
+}
+
+@keyframes slide-bottom {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slide-bottom {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.animation-delay-0 {
+	animation-delay: 0ms;
+}
+
+.animation-delay-1 {
+	animation-delay: 50ms;
+}
+
+.animation-delay-2 {
+	animation-delay: 100ms;
+}
+
+.animation-delay-3 {
+	animation-delay: 150ms;
+}

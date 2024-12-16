@@ -3,6 +3,7 @@
 @import url(./typography.css);
 @import url(./transiciones.css);
 @import url(./common.css);
+@import url(./animations.css);
 @import url(./swiper.css);
 
 * {

@@ -9,10 +9,10 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 <section id="sobre-mi" class="sobre-mi">
 	<SectionHeader>Sobre mí</SectionHeader>
 	<div class="sobre-mi-content container my-12 px-8 lg:px-16 xl:px-40">
-		<div class="sobre-mi-img-container">
+		<div class="sobre-mi-img-container animated">
 			<Image src={BannerSobreMi} alt="Sobre mí" class="sobre-mi" />
 		</div>
-		<p class="sobre-mi-info">
+		<p class="sobre-mi-info animated">
 			¡Hola! Soy <b>Inés, graduada Masterchef</b> y una auténtica <b
 				>aventurera de los sabores.</b
 			>Creo <b>delicias únicas que despiertan los sentidos</b> y alegran el
@@ -36,6 +36,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 		border: 1px solid var(--chocolate);
 		margin-bottom: 16px;
 		max-width: 460px;
+		animation-name: slide-left;
 	}
 
 	.sobre-mi-info {
@@ -43,6 +44,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 		font-size: 16px;
 		line-height: 20px;
 		max-width: 460px;
+		animation-name: none;
 
 		b {
 			font-style: italic;
@@ -72,9 +74,14 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 			column-gap: 24px;
 		}
 
+		.sobre-mi-info {
+			animation-name: slide-right;
+		}
+
 		.sobre-mi-img-container {
 			padding: 16px;
 			margin-bottom: 16px;
+			animation-name: none;
 		}
 	}
 
@@ -89,6 +96,10 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 	@media (min-width: 1280px) {
 		.sobre-mi-content {
 			padding: 16px 160px;
+		}
+
+		.sobre-mi-content {
+			animation-name: inherit !important;
 		}
 		.img-pan {
 			display: block;

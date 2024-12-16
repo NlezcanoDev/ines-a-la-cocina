@@ -1,4 +1,8 @@
-<button>
+---
+const { ...rest } = Astro.props
+---
+
+<button {...rest}>
 	<slot />
 </button>
 

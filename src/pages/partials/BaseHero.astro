@@ -12,18 +12,24 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 <section id="hero" class="hero">
 	<div class="hero-banner container px-4 lg:px-20 xl:px-40">
 		<div class="hero-info xl:ps-20">
-			<h1 class="text-5xl font-bold">INÉS A LA COCINA</h1>
-			<p>
+			<h1
+				class="text-5xl font-bold animated slide-left animation-delay-0 opacity-0"
+			>
+				INÉS A LA COCINA
+			</h1>
+			<p class="animated slide-left animation-delay-1 opacity-0">
 				Delicias horneadas con amor. La esencia de lo casero en cada
 				creación
 			</p>
-			<BaseButton>Ver productos</BaseButton>
+			<BaseButton class="animated slide-left animation-delay-2 opacity-0">
+				Ver productos
+			</BaseButton>
 		</div>
 
 		<Image
 			src={BannerHero}
 			alt="Inés a la cocina"
-			class="hero-banner-img"
+			class="hero-banner-img animated slide-banner"
 		/>
 	</div>
 	<div class="hero-items container px-4 xl:px-40">
@@ -79,6 +85,23 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 		max-width: 480px;
 		margin-left: -10px;
 		z-index: 10;
+	}
+
+	/* ANIMATION */
+	.slide-banner {
+		animation-name: slide-banner;
+	}
+
+	@keyframes slide-banner {
+		from {
+			transform: translateX(50vw);
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 
 	.hero-items {
@@ -165,9 +188,20 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 			position: absolute;
 			top: 30vh;
 			right: 0;
-			transform: translateY(-50%) translateX(12vw);
 			width: 680px;
 			max-width: inherit;
+		}
+
+		@keyframes slide-banner {
+			from {
+				transform: translateX(50vw) translateY(-50%) translateX(12vw);
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+				transform: translateX(0) translateY(-50%) translateX(12vw);
+			}
 		}
 
 		.img-trigo {
@@ -187,12 +221,23 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 
 		.hero-banner-img {
 			width: 700px;
-			transform: translateY(-50%) translateX(0);
 		}
 
 		.img-wave-hero {
 			transform: scaleY(60%);
 			transform-origin: top;
+		}
+
+		@keyframes slide-banner {
+			from {
+				transform: translateX(50vw) translateY(-50%) translateX(0);
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+				transform: translateX(0) translateY(-50%) translateX(0);
+			}
 		}
 	}
 

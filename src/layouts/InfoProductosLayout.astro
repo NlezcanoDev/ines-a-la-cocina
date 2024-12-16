@@ -13,22 +13,23 @@ const { categoria } = Astro.props
 ---
 
 <div class="producto">
-	<!--  px-20 py-10 -->
 	<div
 		class="producto-content container my-4 lg:my-12 px-8 lg:px-16 xl:px-40"
 	>
 		<div>
-			<h3>{categoria}</h3>
-			<p>
+			<h3 class="producto-titulo animated fade-in">{categoria}</h3>
+			<p class="producto-descripcion animated fade-in">
 				<slot />
 			</p>
-			<BaseButton>Ver precios</BaseButton>
+			<BaseButton class="producto-precios animated">
+				Ver precios
+			</BaseButton>
 		</div>
 	</div>
 	<Image
 		src={categoria === 'pastelería' ? BannerPasteleria : BannerPanaderia}
 		alt={`seccion-${categoria}`}
-		class="banner-producto xl:top-5"
+		class="banner-producto xl:top-5 animated"
 	/>
 	<Image src={Trigo} alt="" class="img-trigo" />
 </div>
@@ -43,21 +44,26 @@ const { categoria } = Astro.props
 		border-radius: 8px;
 		display: grid;
 		grid-template-columns: 1fr;
+		margin-top: 36px;
+	}
 
-		h3 {
-			color: var(--orange);
-			text-transform: uppercase;
-			font-weight: 600;
-			font-size: 40px;
-			line-height: 64px;
-		}
+	.producto-titulo {
+		color: var(--orange);
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 40px;
+		line-height: 64px;
+	}
 
-		p {
-			font-size: 20px;
-			color: var(--chocolate);
-			font-style: italic;
-			margin-bottom: 24px;
-		}
+	.producto-descripcion {
+		font-size: 20px;
+		color: var(--chocolate);
+		font-style: italic;
+		margin-bottom: 24px;
+	}
+
+	.producto-precios {
+		animation-name: none;
 	}
 
 	.banner-producto {
@@ -89,6 +95,11 @@ const { categoria } = Astro.props
 			right: 0;
 			transform: translateY(-50%);
 			height: 300px;
+			animation-name: pulse;
+			animation-duration: 800ms;
+		}
+		.producto-precios {
+			animation-name: fade-in;
 		}
 	}
 
@@ -122,5 +133,16 @@ const { categoria } = Astro.props
 
 	/* DESKTOP LG */
 	@media (min-width: 1536px) {
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			filter: brightness(1) saturate(1);
+		}
+
+		50% {
+			filter: brightness(1.05) saturate(0.7);
+		}
 	}
 </style>

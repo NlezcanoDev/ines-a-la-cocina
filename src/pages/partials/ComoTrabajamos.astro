@@ -10,14 +10,14 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 <section id="como-trabajamos" class="como-trabajamos">
 	<SectionHeader>¿Cómo trabajamos?</SectionHeader>
 	<div class="como-trabajamos-content container my-12 px-8 lg:px-16 xl:px-40">
-		<div class="como-trabajamos-img-container">
+		<div class="como-trabajamos-img-container animated">
 			<Image
 				src={BannerComoTrabajamos}
 				alt="¿Cómo trabajamos?"
 				class="como-trabajamos"
 			/>
 		</div>
-		<div class="como-trabajamos-inof">
+		<div class="como-trabajamos-info-container animated">
 			<p class="como-trabajamos-info mb-8">
 				Tomamos pedidos con <b>48 horas de anticipación</b> como mínimo,
 				<b>vía WhatsApp.</b>
@@ -48,6 +48,11 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 		border: 1px solid var(--chocolate);
 		margin-bottom: 16px;
 		max-width: 460px;
+		animation-name: slide-left;
+	}
+
+	.como-trabajamos-info-container {
+		animation-name: none;
 	}
 
 	.como-trabajamos-info {
@@ -84,9 +89,14 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 			column-gap: 24px;
 		}
 
+		.como-trabajamos-info-container {
+			animation-name: slide-right;
+		}
+
 		.como-trabajamos-img-container {
 			padding: 16px;
 			margin-bottom: 16px;
+			animation-name: none;
 		}
 	}
 
@@ -101,6 +111,9 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 	@media (min-width: 1280px) {
 		.como-trabajamos-content {
 			padding: 16px 160px;
+		}
+		.como-trabajamos-content {
+			animation-name: inherit !important;
 		}
 		.img-pan {
 			display: block;

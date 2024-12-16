@@ -8,7 +8,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 <section id="entregas" class="entregas">
 	<SectionHeader>Entregas</SectionHeader>
 	<div class="entregas-content container my-12 px-8 lg:px-16 xl:px-40">
-		<div class="entregas-info">
+		<div class="entregas-info-container animated">
 			<p class="entregas-info mb-8">
 				Las entregas se realizan en un <b
 					>punto de encuentro a acordar con el cliente, una vez
@@ -19,7 +19,9 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 			</p>
 			<BaseButton>Consultar</BaseButton>
 		</div>
-		<div class="entregas-iframe-container mx-auto px-4">
+		<div
+			class="entregas-iframe-container mx-auto px-4 animated slide-bottom"
+		>
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13144.432285766752!2d-58.4798156!3d-34.550819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb696ab5cb4ed%3A0x887c745720a0e9b6!2sParque%20Saavedra!5e0!3m2!1ses!2sar!4v1729993056247!5m2!1ses!2sar"
 				width="568"
@@ -40,12 +42,13 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 		align-items: center;
 		justify-items: center;
 		gap: 24px;
+
+		border: 1px solid;
 	}
-	.entregas-img-container {
-		padding: 8px;
-		border: 1px solid var(--chocolate);
-		margin-bottom: 16px;
-		max-width: 460px;
+
+	.entregas-info-container {
+		background-color: #edffd6;
+		z-index: 100;
 	}
 
 	.entregas-info {
@@ -108,16 +111,13 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 			column-gap: 24px;
 		}
 
+		.entregas-info-container {
+			background-color: transparent;
+		}
+
 		.entregas-info {
 			grid-row: 1;
 			grid-column: span 1;
-		}
-
-		.entregas-img-container {
-			padding: 16px;
-			margin-bottom: 16px;
-			grid-row: 1;
-			grid-column: span 2;
 		}
 	}
 
