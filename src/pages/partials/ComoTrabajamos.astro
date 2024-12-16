@@ -36,6 +36,20 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 	<Image src={Pan} alt="" class="img-pan" />
 </section>
 
+<script>
+	import ObserverAnimation from '../../utils/ObserverAnimation'
+
+	document.addEventListener('DOMContentLoaded', () => {
+		ObserverAnimation('.como-trabajamos-info-container', 'slide-right', 768)
+		ObserverAnimation(
+			'.como-trabajamos-img-container',
+			'slide-left',
+			0,
+			768,
+		)
+	})
+</script>
+
 <style>
 	.como-trabajamos-content {
 		display: grid;
@@ -48,11 +62,7 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 		border: 1px solid var(--chocolate);
 		margin-bottom: 16px;
 		max-width: 460px;
-		animation-name: slide-left;
-	}
-
-	.como-trabajamos-info-container {
-		animation-name: none;
+		opacity: 0;
 	}
 
 	.como-trabajamos-info {
@@ -90,13 +100,13 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 		}
 
 		.como-trabajamos-info-container {
-			animation-name: slide-right;
+			opacity: 0;
 		}
 
 		.como-trabajamos-img-container {
+			opacity: 1;
 			padding: 16px;
 			margin-bottom: 16px;
-			animation-name: none;
 		}
 	}
 

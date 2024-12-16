@@ -8,7 +8,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 <section id="entregas" class="entregas">
 	<SectionHeader>Entregas</SectionHeader>
 	<div class="entregas-content container my-12 px-8 lg:px-16 xl:px-40">
-		<div class="entregas-info-container animated">
+		<div class="entregas-info-container">
 			<p class="entregas-info mb-8">
 				Las entregas se realizan en un <b
 					>punto de encuentro a acordar con el cliente, una vez
@@ -19,9 +19,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 			</p>
 			<BaseButton>Consultar</BaseButton>
 		</div>
-		<div
-			class="entregas-iframe-container mx-auto px-4 animated slide-bottom"
-		>
+		<div class="entregas-iframe-container mx-auto px-4 animated">
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13144.432285766752!2d-58.4798156!3d-34.550819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb696ab5cb4ed%3A0x887c745720a0e9b6!2sParque%20Saavedra!5e0!3m2!1ses!2sar!4v1729993056247!5m2!1ses!2sar"
 				width="568"
@@ -34,6 +32,14 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 	</div>
 	<Image src={BgWave} alt="" class="img-wave" />
 </section>
+
+<script>
+	import ObserverAnimation from '../../utils/ObserverAnimation'
+
+	document.addEventListener('DOMContentLoaded', () => {
+		ObserverAnimation('.entregas-iframe-container', 'slide-bottom', 0)
+	})
+</script>
 
 <style>
 	.entregas-content {
@@ -76,6 +82,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 		display: grid;
 		place-content: center;
 		width: 100%;
+		opacity: 0;
 
 		iframe {
 			max-width: 300px;

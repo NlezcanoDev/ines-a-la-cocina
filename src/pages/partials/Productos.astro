@@ -29,3 +29,20 @@ import { TipoProducto } from '../../data/productos.enum'
 		tipo={TipoProducto.Panaderia}
 	/>
 </section>
+
+<script>
+	import ObserverAnimation from '../../utils/ObserverAnimation'
+	document.querySelectorAll('.producto').forEach((el) => {
+		const elementId = el.id
+		document.addEventListener('DOMContentLoaded', () => {
+			ObserverAnimation(`#${elementId} .producto-titulo`, 'fade-in', 0)
+			ObserverAnimation(
+				`#${elementId} .producto-descripcion`,
+				'fade-in',
+				0,
+			)
+			ObserverAnimation(`#${elementId} .producto-precios`, 'fade-in', 640)
+			ObserverAnimation(`#${elementId} .banner-producto`, 'pulse', 640)
+		})
+	})
+</script>

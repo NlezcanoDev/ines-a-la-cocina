@@ -5,6 +5,8 @@ import BannerPasteleria from '../assets/img/banner-pasteleria.png'
 import BannerPanaderia from '../assets/img/banner-panaderia.png'
 import Trigo from '../assets/icons/png/trigo.png'
 
+import ObserverAnimation from '../utils/ObserverAnimation'
+
 type Props = {
 	categoria: 'pastelería' | 'panadería'
 }
@@ -12,13 +14,13 @@ type Props = {
 const { categoria } = Astro.props
 ---
 
-<div class="producto">
+<div class="producto" id={categoria}>
 	<div
 		class="producto-content container my-4 lg:my-12 px-8 lg:px-16 xl:px-40"
 	>
 		<div>
-			<h3 class="producto-titulo animated fade-in">{categoria}</h3>
-			<p class="producto-descripcion animated fade-in">
+			<h3 class="producto-titulo animated">{categoria}</h3>
+			<p class="producto-descripcion animated">
 				<slot />
 			</p>
 			<BaseButton class="producto-precios animated">
@@ -53,6 +55,7 @@ const { categoria } = Astro.props
 		font-weight: 600;
 		font-size: 40px;
 		line-height: 64px;
+		opacity: 0;
 	}
 
 	.producto-descripcion {
@@ -60,10 +63,7 @@ const { categoria } = Astro.props
 		color: var(--chocolate);
 		font-style: italic;
 		margin-bottom: 24px;
-	}
-
-	.producto-precios {
-		animation-name: none;
+		opacity: 0;
 	}
 
 	.banner-producto {
@@ -74,6 +74,11 @@ const { categoria } = Astro.props
 
 	.img-trigo {
 		display: none;
+	}
+
+	.pulse {
+		animation-name: pulse;
+		animation-duration: 800ms !important;
 	}
 
 	@media (min-width: 480px) {
@@ -95,11 +100,11 @@ const { categoria } = Astro.props
 			right: 0;
 			transform: translateY(-50%);
 			height: 300px;
-			animation-name: pulse;
-			animation-duration: 800ms;
 		}
+
 		.producto-precios {
 			animation-name: fade-in;
+			opacity: 0;
 		}
 	}
 

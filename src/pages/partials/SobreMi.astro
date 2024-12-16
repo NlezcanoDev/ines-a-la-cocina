@@ -24,6 +24,15 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 	<Image src={Pan} alt="" class="img-pan" />
 </section>
 
+<script>
+	import ObserverAnimation from '../../utils/ObserverAnimation'
+
+	document.addEventListener('DOMContentLoaded', () => {
+		ObserverAnimation('.sobre-mi-info', 'slide-right', 768)
+		ObserverAnimation('.sobre-mi-img-container', 'slide-left', 0, 768)
+	})
+</script>
+
 <style>
 	.sobre-mi-content {
 		display: grid;
@@ -36,7 +45,7 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 		border: 1px solid var(--chocolate);
 		margin-bottom: 16px;
 		max-width: 460px;
-		animation-name: slide-left;
+		opacity: 0;
 	}
 
 	.sobre-mi-info {
@@ -44,7 +53,6 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 		font-size: 16px;
 		line-height: 20px;
 		max-width: 460px;
-		animation-name: none;
 
 		b {
 			font-style: italic;
@@ -75,13 +83,13 @@ import BgWave from '../../assets/img/wave-section-1.svg'
 		}
 
 		.sobre-mi-info {
-			animation-name: slide-right;
+			opacity: 0;
 		}
 
 		.sobre-mi-img-container {
+			opacity: 1;
 			padding: 16px;
 			margin-bottom: 16px;
-			animation-name: none;
 		}
 	}
 
