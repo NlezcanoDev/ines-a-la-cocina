@@ -8,6 +8,7 @@ import {
 import BaseCarousel from './BaseCarousel.vue'
 import BaseAccordion from './BaseAccordion.vue'
 import type { Producto } from '../../data/productos.types'
+import BaseLoading from './BaseLoading.vue'
 
 type Props = {
 	id: string
@@ -18,6 +19,7 @@ type Props = {
 const props = defineProps<Props>()
 
 const categoriaSelected = ref<string>()
+const loading = ref<boolean>(true)
 const categorias = computed(() => getCategorias(props.tipo))
 
 const totalProds = ref<Array<Producto>>([])
@@ -63,6 +65,7 @@ async function getProductos(tipo: TipoProducto, cat: string, inicial = false) {
 	productos.value = totalProds.value.filter(
 		(p) => p.tipo === tipo && p.categorias.includes(baseCat),
 	)
+	setTimeout(() => (loading.value = false), 1000)
 }
 
 const handleClick = async (cat: string) => {
@@ -92,8 +95,13 @@ const handleClick = async (cat: string) => {
 				</button>
 			</div>
 		</div>
-		<BaseAccordion :productos="productos" />
-		<BaseCarousel :productos="productos" />
+		<div v-if="loading" class="loading-container">
+			<BaseLoading />
+		</div>
+		<template v-else>
+			<BaseAccordion :productos="productos" />
+			<BaseCarousel :productos="productos" />
+		</template>
 	</section>
 </template>
 
@@ -148,10 +156,22 @@ section {
 	border-bottom: 4px solid var(--orange);
 }
 
+.loading-container {
+	height: 320px;
+	display: grid;
+	place-content: center;
+	margin-bottom: 30px;
+}
+
 /* TABLE SM */
 @media (min-width: 640px) {
 	section {
 		padding-bottom: 0 !important;
+	}
+
+	.loading-container {
+		height: 342px;
+		margin-bottom: 0;
 	}
 }
 
@@ -163,6 +183,10 @@ section {
 		&:is(.selected) {
 			padding-bottom: 12px;
 		}
+	}
+
+	.loading-container {
+		height: 356px;
 	}
 }
 
@@ -186,6 +210,10 @@ section {
 		&:last-of-type {
 			padding-right: 0;
 		}
+	}
+
+	.loading-container {
+		height: 376px;
 	}
 }
 
@@ -227,6 +255,10 @@ section {
 		&:last-of-type {
 			padding-right: 0;
 		}
+	}
+
+	.loading-container {
+		height: 452px;
 	}
 }
 
