@@ -42,6 +42,10 @@ body {
 	overflow-y: scroll;
 }
 
+section {
+	overflow-y: hidden;
+}
+
 img {
 	-webkit-user-drag: none;
 	-khtml-user-drag: none;
