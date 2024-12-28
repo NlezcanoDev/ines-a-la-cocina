@@ -31,13 +31,13 @@ const urlMenu: string = import.meta.env.URL_MENU
 			</BaseButton>
 		</div>
 	</div>
+	<Image
+		src={categoria === 'pastelería' ? BannerPasteleria : BannerPanaderia}
+		alt={`seccion-${categoria}`}
+		class="banner-producto xl:top-5 animated"
+	/>
+	<Image src={Trigo} alt="" class="img-trigo" />
 </div>
-<Image
-	src={categoria === 'pastelería' ? BannerPasteleria : BannerPanaderia}
-	alt={`seccion-${categoria}`}
-	class="banner-producto xl:top-5 animated"
-/>
-<Image src={Trigo} alt="" class="img-trigo" />
 
 <script define:vars={urlMenu}>
 	const links = document.querySelectorAll('.info-producto-link')
