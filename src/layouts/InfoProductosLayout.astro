@@ -5,13 +5,13 @@ import BannerPasteleria from '../assets/img/banner-pasteleria.png'
 import BannerPanaderia from '../assets/img/banner-panaderia.png'
 import Trigo from '../assets/icons/png/trigo.png'
 
-import ObserverAnimation from '../utils/ObserverAnimation'
-
 type Props = {
 	categoria: 'pastelería' | 'panadería'
 }
 
 const { categoria } = Astro.props
+
+const urlMenu: string = import.meta.env.URL_MENU
 ---
 
 <div class="producto" id={categoria}>
@@ -23,18 +23,31 @@ const { categoria } = Astro.props
 			<p class="producto-descripcion animated">
 				<slot />
 			</p>
-			<BaseButton class="producto-precios animated">
+			<BaseButton
+				href={urlMenu}
+				class="producto-precios animated info-producto-link"
+			>
 				Ver precios
 			</BaseButton>
 		</div>
 	</div>
-	<Image
-		src={categoria === 'pastelería' ? BannerPasteleria : BannerPanaderia}
-		alt={`seccion-${categoria}`}
-		class="banner-producto xl:top-5 animated"
-	/>
-	<Image src={Trigo} alt="" class="img-trigo" />
 </div>
+<Image
+	src={categoria === 'pastelería' ? BannerPasteleria : BannerPanaderia}
+	alt={`seccion-${categoria}`}
+	class="banner-producto xl:top-5 animated"
+/>
+<Image src={Trigo} alt="" class="img-trigo" />
+
+<script define:vars={urlMenu}>
+	const links = document.querySelectorAll('.info-producto-link')
+	links.forEach((l) =>
+		l.addEventListener('click', () => {
+			window.location.href = urlMenu
+			console.log('click')
+		}),
+	)
+</script>
 
 <style>
 	.producto {
@@ -79,6 +92,10 @@ const { categoria } = Astro.props
 	.pulse {
 		animation-name: pulse;
 		animation-duration: 800ms !important;
+	}
+
+	a:hover {
+		color: white;
 	}
 
 	@media (min-width: 480px) {

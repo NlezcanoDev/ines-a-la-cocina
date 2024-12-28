@@ -15,7 +15,6 @@ export default function ObserverAnimation(
 					width < maxMediaQuery
 				) {
 					entry.target.classList.add(classAnimation)
-					console.log('el:', domElement)
 					observer.disconnect()
 				}
 			})

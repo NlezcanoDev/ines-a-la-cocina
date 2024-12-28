@@ -5,6 +5,8 @@ import BaseButton from '../../components/astro/BaseButton.astro'
 import BgWave from '../../assets/img/wave-section-1.svg'
 import BannerComoTrabajamos from '../../assets/img/banner-como-trabajamos.png'
 import Pan from '../../assets/icons/png/pan-lactal.png'
+
+const urlMenu: string = import.meta.env.URL_MENU
 ---
 
 <section id="como-trabajamos" class="como-trabajamos">
@@ -29,7 +31,7 @@ import Pan from '../../assets/icons/png/pan-lactal.png'
 				<br />Todos los productos <b>se pueden personalizar a pedido.</b
 				>
 			</p>
-			<BaseButton>Realizar pedido</BaseButton>
+			<BaseButton href={urlMenu}>Realizar pedido</BaseButton>
 		</div>
 	</div>
 	<Image src={BgWave} alt="" class="img-wave" />

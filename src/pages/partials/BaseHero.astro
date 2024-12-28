@@ -7,6 +7,8 @@ import Bagel from '../../assets/icons/png/bagel.png'
 import Pretzel from '../../assets/icons/png/pretzel.png'
 import Trigo from '../../assets/icons/png/trigo.png'
 import WaveHero from '../../assets/img/wave-hero.svg'
+
+const urlMenu: string = import.meta.env.URL_MENU
 ---
 
 <section id="hero" class="hero">
@@ -21,7 +23,10 @@ import WaveHero from '../../assets/img/wave-hero.svg'
 				Delicias horneadas con amor. La esencia de lo casero en cada
 				creación
 			</p>
-			<BaseButton class="animated slide-left animation-delay-2 opacity-0">
+			<BaseButton
+				href={urlMenu}
+				class="animated slide-left animation-delay-2 opacity-0 link-menu"
+			>
 				Ver productos
 			</BaseButton>
 		</div>
