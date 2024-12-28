@@ -131,6 +131,18 @@ section {
 	width: 100%;
 	overflow-x: scroll;
 	padding-bottom: 6px;
+
+	&::-webkit-scrollbar {
+		width: 6px;
+		height: 2px;
+		background-color: transparent;
+	}
+
+	/* Add a thumb */
+	&::-webkit-scrollbar-thumb {
+		background: var(--orange);
+		border-radius: 5px;
+	}
 }
 
 .categoria-btn {

@@ -66,7 +66,11 @@ watch(
 					spaceBetween: 24,
 				},
 				1536: {
-					slidesPerView: 5.5,
+					slidesPerView: 4.5,
+					spaceBetween: 30,
+				},
+				1900: {
+					slidesPerView: 6.5,
 					spaceBetween: 30,
 				},
 			}"

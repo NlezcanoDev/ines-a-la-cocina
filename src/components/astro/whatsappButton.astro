@@ -1,9 +1,15 @@
 ---
 import { Image } from 'astro:assets'
 import WhatsappLogo from '../../assets/icons/svg/whatsapp-logo.svg'
+
+const telefono: number = 5491167977758
+const mensaje: string = 'Hola Inés! Me gustaría realizar mi pedido'
 ---
 
-<a id="whatsapp-btn">
+<a
+	id="whatsapp-btn"
+	href={`https://wa.me/${telefono}?text=${mensaje.replaceAll(' ', '%20')}`}
+>
 	<Image src={WhatsappLogo} alt="Whatsapp" />
 </a>
 
